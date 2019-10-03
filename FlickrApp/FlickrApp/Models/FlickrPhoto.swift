@@ -16,30 +16,15 @@ struct FlickrPhoto {
     let server: String?
     let farm: Int?
     let title: String?
-    let isPublic: Bool?
-    let isFriend: Bool?
-    let isFamily: Bool?
 
-    static func fromJsonData(_ jsonData: AnyObject) -> FlickrPhoto {
-        let isPublicInt = boolValue(from: jsonData[Constant.FlickrPhoto.isPublicFieldName] as Any?)
-        let isFriendInt = boolValue(from: jsonData[Constant.FlickrPhoto.isFriendFieldName] as Any?)
-        let isFamilyInt = boolValue(from: jsonData[Constant.FlickrPhoto.isFamilyFieldName] as Any?)
-
-        return FlickrPhoto(photoId: jsonData[Constant.FlickrPhoto.idFieldName] as? String,
-                           owner: jsonData[Constant.FlickrPhoto.ownerFieldName] as? String,
-                           secret: jsonData[Constant.FlickrPhoto.secretFieldName] as? String,
-                           server: jsonData[Constant.FlickrPhoto.serverFieldName] as? String,
-                           farm: jsonData[Constant.FlickrPhoto.farmFieldName] as? Int,
-                           title: jsonData[Constant.FlickrPhoto.titleFieldName] as? String,
-                           isPublic: isPublicInt,
-                           isFriend: isFriendInt,
-                           isFamily: isFamilyInt)
-    }
-
-    static func boolValue(from value: Any?) -> Bool? {
-        guard let value = value as? NSNumber else { return nil }
+    static func fromJsonData(_ jsonData: [String: Any]) -> FlickrPhoto {
         
-        return Bool(truncating: value)
+        return FlickrPhoto(photoId: jsonData[Constant.FlickrPhoto.idKey] as? String,
+                           owner: jsonData[Constant.FlickrPhoto.ownerKey] as? String,
+                           secret: jsonData[Constant.FlickrPhoto.secretKey] as? String,
+                           server: jsonData[Constant.FlickrPhoto.serverKey] as? String,
+                           farm: jsonData[Constant.FlickrPhoto.farmKey] as? Int,
+                           title: jsonData[Constant.FlickrPhoto.titleKey] as? String)
     }
 
     func thumbnailUrl() -> URL? {

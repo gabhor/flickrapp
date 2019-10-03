@@ -15,12 +15,7 @@ struct PhotosSearch {
         var page: Int?
 
         func queryDataString () -> String {
-            let queryDataDictionary = queryData()
-            let keyValuePairs = queryDataDictionary.compactMap { (key: String, value: String) -> String in
-                return key + "=" + value
-            }
-
-            return keyValuePairs.joined(separator: "&")
+            queryData().queryDataString()
         }
         
         private func queryData() -> [String: String] {

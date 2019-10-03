@@ -23,6 +23,8 @@ public enum Constant {
         public static let textFieldName = "text"
         public static let perPageFieldName = "per_page"
         public static let pageFieldName = "page"
+        public static let photoIdFieldName = "photo_id"
+        public static let secretFieldName = "secret"
 
         //static request values
         public static let apiKey = "65803e8f6e4a3982200621cad356be51"
@@ -34,13 +36,12 @@ public enum Constant {
 
         //methods
         public static let photosSearchMethodValue = "flickr.photos.search"
+        public static let photosGetInfoMethodValue = "flickr.photos.getInfo"
 
-        //response parmeter names
-        public static let statFieldName = "stat"
-        public static let messageFieldName = "message"
-        public static let codeFieldName = "code"
-        public static let photosFieldName = "photos"
-        public static let photoFieldName = "photo"
+        //response parmeter keys
+        public static let statKey = "stat"
+        public static let messageKey = "message"
+        public static let codeKey = "code"
 
         //response parmeter values
         public static let statFieldSuccessfulValue = "ok"
@@ -65,15 +66,22 @@ public enum Constant {
     }
 
     public enum FlickrPhoto {
-        public static let idFieldName = "id"
-        public static let ownerFieldName = "owner"
-        public static let secretFieldName = "secret"
-        public static let serverFieldName = "server"
-        public static let farmFieldName = "farm"
-        public static let titleFieldName = "title"
-        public static let isFriendFieldName = "isfriend"
-        public static let isFamilyFieldName = "isfamily"
-        public static let isPublicFieldName = "ispublic"
+        public static let photosKey = "photos"
+        public static let photoKey = "photo"
+        public static let idKey = "id"
+        public static let ownerKey = "owner"
+        public static let secretKey = "secret"
+        public static let serverKey = "server"
+        public static let farmKey = "farm"
+        public static let titleKey = "title"
+        public static let descriptionKey = "description"
+        public static let originalSecretKey = "originalsecret"
+        public static let originalFormatKey = "originalformat"
+        public static let userNameKey = "username"
+        public static let realNameKey = "realname"
+        public static let contentKey = "_content"
+        public static let datesKey = "dates"
+        public static let takenDateKey = "taken"
     }
 
 }
