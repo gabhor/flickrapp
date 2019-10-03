@@ -10,18 +10,18 @@ import Foundation
 
 class PhotosSearchDeserializer: ResponseDeserializerProtocol {
     func responseModel(fromJsonData jsonData: AnyObject) -> ResponseModelProtocol {
-        guard let jsonDict = jsonData as? [String: Any], let stat = jsonData[Constant.FlickrService.statKey] as? String else {
-            return PhotosSearch.ResponseModel(stat: Constant.FlickrService.statFieldFailedValue, message: .none, code: Constant.Error.generalError, photos: .none)
+        guard let jsonDict = jsonData as? [String: Any], let stat = jsonData[Constant.ResponseParameter.stat] as? String else {
+            return PhotosSearch.ResponseModel(stat: Constant.ResponseParameter.stat, message: .none, code: Constant.Error.generalError, photos: .none)
         }
 
-        let photosNode = jsonDict[Constant.FlickrPhoto.photosKey]
-        return PhotosSearch.ResponseModel(stat: stat, message: jsonData[Constant.FlickrService.messageKey] as? String, code: jsonData[Constant.FlickrService.codeKey] as? Int, photos: photos(from: photosNode))
+        let photosNode = jsonDict[Constant.ResponseParameter.photos]
+        return PhotosSearch.ResponseModel(stat: stat, message: jsonData[Constant.ResponseParameter.message] as? String, code: jsonData[Constant.ResponseParameter.code] as? Int, photos: photos(from: photosNode))
     }
 }
 
 private extension PhotosSearchDeserializer {
     func photos(from photosNode: Any?) -> [FlickrPhoto]? {
-        guard let photosNode = photosNode as? [String: Any], let photoNode = photosNode[Constant.FlickrPhoto.photoKey] as? [[String: Any]] else { return .none }
+        guard let photosNode = photosNode as? [String: Any], let photoNode = photosNode[Constant.ResponseParameter.photo] as? [[String: Any]] else { return .none }
 
         return photoNode.compactMap({
             FlickrPhoto.fromJsonData($0)

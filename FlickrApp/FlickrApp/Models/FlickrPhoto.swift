@@ -19,17 +19,22 @@ struct FlickrPhoto {
 
     static func fromJsonData(_ jsonData: [String: Any]) -> FlickrPhoto {
         
-        return FlickrPhoto(photoId: jsonData[Constant.FlickrPhoto.idKey] as? String,
-                           owner: jsonData[Constant.FlickrPhoto.ownerKey] as? String,
-                           secret: jsonData[Constant.FlickrPhoto.secretKey] as? String,
-                           server: jsonData[Constant.FlickrPhoto.serverKey] as? String,
-                           farm: jsonData[Constant.FlickrPhoto.farmKey] as? Int,
-                           title: jsonData[Constant.FlickrPhoto.titleKey] as? String)
+        return FlickrPhoto(photoId: jsonData[Constant.ResponseParameter.photoId] as? String,
+                           owner: jsonData[Constant.ResponseParameter.owner] as? String,
+                           secret: jsonData[Constant.ResponseParameter.secret] as? String,
+                           server: jsonData[Constant.ResponseParameter.server] as? String,
+                           farm: jsonData[Constant.ResponseParameter.farm] as? Int,
+                           title: jsonData[Constant.ResponseParameter.title] as? String)
     }
 
     func thumbnailUrl() -> URL? {
         guard let farm = farm, let server = server, let photoId = photoId, let secret = secret else { return .none }
-        let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoId)_\(secret)_t.jpg"
+
+        var urlString = Constant.PhotoUrl.thumbnail
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.farm, with: String(farm))
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.secret, with: secret)
         return URL(string: urlString)
     }
 }

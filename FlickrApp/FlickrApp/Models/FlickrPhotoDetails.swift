@@ -23,33 +23,44 @@ struct FlickrPhotoDetails {
     let taken: String?
 
     static func fromJsonData(_ jsonData: [String: Any]) -> FlickrPhotoDetails {
-        let ownerData = jsonData[Constant.FlickrPhoto.ownerKey] as? [String: Any]
-        let titleData = jsonData[Constant.FlickrPhoto.titleKey] as? [String: Any]
-        let descriptionData = jsonData[Constant.FlickrPhoto.descriptionKey] as? [String: Any]
-        let datesData = jsonData[Constant.FlickrPhoto.datesKey] as? [String: Any]
+        let ownerData = jsonData[Constant.ResponseParameter.owner] as? [String: Any]
+        let titleData = jsonData[Constant.ResponseParameter.title] as? [String: Any]
+        let descriptionData = jsonData[Constant.ResponseParameter.description] as? [String: Any]
+        let datesData = jsonData[Constant.ResponseParameter.dates] as? [String: Any]
 
-        return FlickrPhotoDetails(photoId: jsonData[Constant.FlickrPhoto.idKey] as? String,
-                                  secret: jsonData[Constant.FlickrPhoto.secretKey] as? String,
-                                  server: jsonData[Constant.FlickrPhoto.serverKey] as? String,
-                                  farm: jsonData[Constant.FlickrPhoto.farmKey] as? Int,
-                                  originalSecret: jsonData[Constant.FlickrPhoto.originalSecretKey] as? String,
-                                  originalFormat: jsonData[Constant.FlickrPhoto.originalFormatKey] as? String,
-                                  ownerUserName: ownerData?[Constant.FlickrPhoto.userNameKey] as? String,
-                                  ownerRealName: ownerData?[Constant.FlickrPhoto.realNameKey] as? String,
-                                  title: titleData?[Constant.FlickrPhoto.contentKey] as? String,
-                                  description: descriptionData?[Constant.FlickrPhoto.contentKey] as? String,
-                                  taken: datesData?[Constant.FlickrPhoto.takenDateKey] as? String)
+        return FlickrPhotoDetails(photoId: jsonData[Constant.ResponseParameter.photoId] as? String,
+                                  secret: jsonData[Constant.ResponseParameter.secret] as? String,
+                                  server: jsonData[Constant.ResponseParameter.server] as? String,
+                                  farm: jsonData[Constant.ResponseParameter.farm] as? Int,
+                                  originalSecret: jsonData[Constant.ResponseParameter.originalSecret] as? String,
+                                  originalFormat: jsonData[Constant.ResponseParameter.originalFormat] as? String,
+                                  ownerUserName: ownerData?[Constant.ResponseParameter.userName] as? String,
+                                  ownerRealName: ownerData?[Constant.ResponseParameter.realName] as? String,
+                                  title: titleData?[Constant.ResponseParameter.content] as? String,
+                                  description: descriptionData?[Constant.ResponseParameter.content] as? String,
+                                  taken: datesData?[Constant.ResponseParameter.takenDate] as? String)
     }
 
     func originalImageUrl() -> URL? {
         guard let farm = farm, let server = server, let photoId = photoId, let originalSecret = originalSecret, let originalFormat = originalFormat else { return .none }
-        let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoId)_\(originalSecret)_o.\(originalFormat))"
+
+        var urlString = Constant.PhotoUrl.original
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.farm, with: String(farm))
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.originalSecret, with: originalSecret)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.originalFormat, with: originalFormat)
         return URL(string: urlString)
     }
 
     func largeImageUrl() -> URL? {
         guard let farm = farm, let server = server, let photoId = photoId, let secret = secret else { return .none }
-        let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoId)_\(secret)_b.jpg)"
+
+        var urlString = Constant.PhotoUrl.large
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.farm, with: String(farm))
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
+        urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.secret, with: secret)
         return URL(string: urlString)
     }
 }

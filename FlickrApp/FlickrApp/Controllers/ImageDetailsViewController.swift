@@ -41,6 +41,13 @@ extension ImageDetailsViewController: ImageDetailsViewProtocol {
 
 }
 
+extension ImageDetailsViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+
+        return imageView
+    }
+}
+
 private extension ImageDetailsViewController {
 
     func fetchPhotoDetails() {

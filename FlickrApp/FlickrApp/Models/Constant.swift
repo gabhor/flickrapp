@@ -10,43 +10,72 @@ import Foundation
 
 public enum Constant {
 
+    public enum App {
+
+        public static let photoCellIdentifier = "PhotoCell"
+        public static let showDetailSegue = "showDetail"
+        public static let initialSearchText = "dog"
+    }
     public enum FlickrService {
 
+        // service data
         public static let restServiceUrl = "https://www.flickr.com/services/rest/"
         public static let defaultTimeoutInterval = 30
-
-        //request parameter names
-        public static let apiKeyFieldName = "api_key"
-        public static let formatFieldName = "format"
-        public static let noJsonCallbackFieldName = "nojsoncallback"
-        public static let methodFieldName = "method"
-        public static let textFieldName = "text"
-        public static let perPageFieldName = "per_page"
-        public static let pageFieldName = "page"
-        public static let photoIdFieldName = "photo_id"
-        public static let secretFieldName = "secret"
-
-        //static request values
         public static let apiKey = "65803e8f6e4a3982200621cad356be51"
         public static let format = "json"
         public static let noJsonCallback = "1"
 
-        //default request values
+        // default values
         public static let perPageDefaultValue = 20
 
-        //methods
-        public static let photosSearchMethodValue = "flickr.photos.search"
-        public static let photosGetInfoMethodValue = "flickr.photos.getInfo"
+        public enum Method {
 
-        //response parmeter keys
-        public static let statKey = "stat"
-        public static let messageKey = "message"
-        public static let codeKey = "code"
+            public static let photosSearch = "flickr.photos.search"
+            public static let photosGetInfo = "flickr.photos.getInfo"
+        }
 
-        //response parmeter values
-        public static let statFieldSuccessfulValue = "ok"
-        public static let statFieldFailedValue = "fail"
 
+        public enum Result {
+
+            public static let successful = "ok"
+            public static let failed = "fail"
+        }
+    }
+
+    public enum RequestParameter {
+
+        public static let apiKey = "api_key"
+        public static let format = "format"
+        public static let noJsonCallback = "nojsoncallback"
+        public static let method = "method"
+        public static let text = "text"
+        public static let perPage = "per_page"
+        public static let page = "page"
+        public static let photoId = "photo_id"
+        public static let secret = "secret"
+    }
+
+    public enum ResponseParameter {
+
+        public static let stat = "stat"
+        public static let message = "message"
+        public static let code = "code"
+        public static let photos = "photos"
+        public static let photo = "photo"
+        public static let photoId = "id"
+        public static let owner = "owner"
+        public static let secret = "secret"
+        public static let server = "server"
+        public static let farm = "farm"
+        public static let title = "title"
+        public static let description = "description"
+        public static let originalSecret = "originalsecret"
+        public static let originalFormat = "originalformat"
+        public static let userName = "username"
+        public static let realName = "realname"
+        public static let content = "_content"
+        public static let dates = "dates"
+        public static let takenDate = "taken"
     }
 
     public enum WebService {
@@ -65,23 +94,22 @@ public enum Constant {
 
     }
 
-    public enum FlickrPhoto {
-        public static let photosKey = "photos"
-        public static let photoKey = "photo"
-        public static let idKey = "id"
-        public static let ownerKey = "owner"
-        public static let secretKey = "secret"
-        public static let serverKey = "server"
-        public static let farmKey = "farm"
-        public static let titleKey = "title"
-        public static let descriptionKey = "description"
-        public static let originalSecretKey = "originalsecret"
-        public static let originalFormatKey = "originalformat"
-        public static let userNameKey = "username"
-        public static let realNameKey = "realname"
-        public static let contentKey = "_content"
-        public static let datesKey = "dates"
-        public static let takenDateKey = "taken"
+
+    public enum PhotoUrl {
+
+            public static let thumbnail = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_t.jpg"
+            public static let large = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_b.jpg"
+            public static let original = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[ORIGINALSECRET]_o.[ORIGINALFORMAT])"
+
+            public enum Parameter {
+
+                public static let farm = "[FARM]"
+                public static let server = "[SERVER]"
+                public static let photoId = "[ID]"
+                public static let secret = "[SECRET]"
+                public static let originalSecret = "[ORIGINALSECRET]"
+                public static let originalFormat = "[ORIGINALFORMAT]"
+            }
     }
 
 }

@@ -38,7 +38,7 @@ class WebService {
             do {
                 let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
                 let responseModel = deserializer.responseModel(fromJsonData: jsonData)
-                if responseModel.stat == Constant.FlickrService.statFieldSuccessfulValue {
+                if responseModel.stat == Constant.FlickrService.Result.successful {
                     strongSelf.delegate?.serviceFinished(withResponse: responseModel)
                 } else {
                     // Process error

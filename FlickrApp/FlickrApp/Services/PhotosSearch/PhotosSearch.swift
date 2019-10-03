@@ -20,23 +20,23 @@ struct PhotosSearch {
         
         private func queryData() -> [String: String] {
             var queryData = [
-                    Constant.FlickrService.methodFieldName: Constant.FlickrService.photosSearchMethodValue,
-                    Constant.FlickrService.apiKeyFieldName: Constant.FlickrService.apiKey,
-                    Constant.FlickrService.formatFieldName: Constant.FlickrService.format,
-                    Constant.FlickrService.noJsonCallbackFieldName: Constant.FlickrService.noJsonCallback]
+                Constant.RequestParameter.method: Constant.FlickrService.Method.photosSearch,
+                    Constant.RequestParameter.apiKey: Constant.FlickrService.apiKey,
+                    Constant.RequestParameter.format: Constant.FlickrService.format,
+                    Constant.RequestParameter.noJsonCallback: Constant.FlickrService.noJsonCallback]
 
             if let text = text {
-                queryData[Constant.FlickrService.textFieldName] = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                queryData[Constant.RequestParameter.text] = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             }
 
             if let perPage = perPage {
-                queryData[Constant.FlickrService.perPageFieldName] = "\(perPage)"
+                queryData[Constant.RequestParameter.perPage] = "\(perPage)"
             } else {
-                queryData[Constant.FlickrService.perPageFieldName] = "\(Constant.FlickrService.perPageDefaultValue)"
+                queryData[Constant.RequestParameter.perPage] = "\(Constant.FlickrService.perPageDefaultValue)"
             }
 
             if let page = page {
-                queryData[Constant.FlickrService.pageFieldName] = "\(page)"
+                queryData[Constant.RequestParameter.page] = "\(page)"
             }
 
             return queryData

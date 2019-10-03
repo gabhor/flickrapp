@@ -10,17 +10,17 @@ import Foundation
 
 class PhotosGetInfoDeserializer: ResponseDeserializerProtocol {
     func responseModel(fromJsonData jsonData: AnyObject) -> ResponseModelProtocol {
-        guard let _ = jsonData as? [String: Any], let stat = jsonData[Constant.FlickrService.statKey] as? String else {
-            return PhotosGetInfo.ResponseModel(stat: Constant.FlickrService.statFieldFailedValue, message: .none, code: Constant.Error.generalError, photoDetails: .none)
+        guard let _ = jsonData as? [String: Any], let stat = jsonData[Constant.ResponseParameter.stat] as? String else {
+            return PhotosGetInfo.ResponseModel(stat: Constant.ResponseParameter.stat, message: .none, code: Constant.Error.generalError, photoDetails: .none)
         }
 
-        return PhotosGetInfo.ResponseModel(stat: stat, message: jsonData[Constant.FlickrService.messageKey] as? String, code: jsonData[Constant.FlickrService.codeKey] as? Int, photoDetails: photoDetails(from: jsonData))
+        return PhotosGetInfo.ResponseModel(stat: stat, message: jsonData[Constant.ResponseParameter.message] as? String, code: jsonData[Constant.ResponseParameter.code] as? Int, photoDetails: photoDetails(from: jsonData))
     }
 }
 
 private extension PhotosGetInfoDeserializer {
     func photoDetails(from jsonData: AnyObject) -> FlickrPhotoDetails? {
-        guard let _ = jsonData as? [String: Any], let photoData = jsonData[Constant.FlickrPhoto.photoKey]  as? [String: Any] else { return .none }
+        guard let _ = jsonData as? [String: Any], let photoData = jsonData[Constant.ResponseParameter.photo]  as? [String: Any] else { return .none }
 
         return FlickrPhotoDetails.fromJsonData(photoData)
     }

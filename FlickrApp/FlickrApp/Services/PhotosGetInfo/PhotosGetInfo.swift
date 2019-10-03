@@ -19,15 +19,15 @@ struct PhotosGetInfo {
 
         private func queryData() -> [String: String] {
             var queryData = [
-                    Constant.FlickrService.methodFieldName: Constant.FlickrService.photosGetInfoMethodValue,
-                    Constant.FlickrService.apiKeyFieldName: Constant.FlickrService.apiKey,
-                    Constant.FlickrService.formatFieldName: Constant.FlickrService.format,
-                    Constant.FlickrService.noJsonCallbackFieldName: Constant.FlickrService.noJsonCallback,
-                    Constant.FlickrService.photoIdFieldName: photoId
+                Constant.RequestParameter.method: Constant.FlickrService.Method.photosGetInfo,
+                    Constant.RequestParameter.apiKey: Constant.FlickrService.apiKey,
+                    Constant.RequestParameter.format: Constant.FlickrService.format,
+                    Constant.RequestParameter.noJsonCallback: Constant.FlickrService.noJsonCallback,
+                    Constant.RequestParameter.photoId: photoId
             ]
 
             if let secret = secret {
-                queryData[Constant.FlickrService.secretFieldName] = secret
+                queryData[Constant.RequestParameter.secret] = secret
             }
 
             return queryData

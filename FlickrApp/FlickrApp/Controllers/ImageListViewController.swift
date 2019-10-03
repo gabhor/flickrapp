@@ -32,7 +32,7 @@ class ImageListViewController: UIViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == Constant.App.showDetailSegue {
             if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell) {
                 let object = photos[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! ImageDetailsViewController
@@ -61,7 +61,7 @@ extension ImageListViewController : UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.App.photoCellIdentifier, for: indexPath)
         let photoData = photos[indexPath.row]
         if let cell = cell as? PhotoCell {
             cell.displayPhoto(photoData)
@@ -113,7 +113,7 @@ private extension ImageListViewController {
     }
 
     func initSearchBar() {
-        searchBar.text = "dog"
+        searchBar.text = Constant.App.initialSearchText 
     }
 
     func startSearch() {
