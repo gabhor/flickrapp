@@ -41,4 +41,10 @@ struct FlickrPhoto {
         
         return Bool(truncating: value)
     }
+
+    func thumbnailUrl() -> URL? {
+        guard let farm = farm, let server = server, let photoId = photoId, let secret = secret else { return .none }
+        let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoId)_\(secret)_t.jpg"
+        return URL(string: urlString)
+    }
 }
