@@ -11,8 +11,8 @@ import UIKit
 class ImageListViewController: UIViewController {
 
     var detailViewController: ImageDetailsViewController? = nil
-    var photos = [FlickrPhoto]()
-    var presenter = ImageListPresenter()
+    private var photos = [FlickrPhoto]()
+    private var presenter = ImageListPresenter()
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -33,13 +33,13 @@ class ImageListViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let object = objects[indexPath.row] as! NSDate
+            if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell) {
+                let object = photos[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! ImageDetailsViewController
-//                controller.detailItem = object
-//                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-//                controller.navigationItem.leftItemsSupplementBackButton = true
-//            }
+                controller.detailItem = object
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
         }
     }
 }

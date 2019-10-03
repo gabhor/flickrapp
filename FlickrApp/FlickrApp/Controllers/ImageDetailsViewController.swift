@@ -10,23 +10,34 @@ import UIKit
 
 class ImageDetailsViewController: UIViewController {
 
-    func configureView() {
-        if let detail = detailItem {
-            //TODO
-        }
-    }
+    private var presenter = ImageDetailsPresenter()
+    var detailItem: FlickrPhoto?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
+        presenter.view = self
+        fetchPhotoDetails()
+    }
+}
+
+extension ImageDetailsViewController: ImageDetailsViewProtocol {
+    func update(with photo: FlickrPhotoDetails) {
+        print(photo)
+        print(photo.imageUrl())
     }
 
-    var detailItem: FlickrPhoto? {
-        didSet {
-            configureView()
-        }
+    func update(with error: Error) {
+        //TODO: Error handling
     }
 
 
 }
 
+private extension ImageDetailsViewController {
+
+    func fetchPhotoDetails() {
+        guard let photoId = detailItem?.photoId else { return }
+
+        presenter.getDetails(with: photoId)
+    }
+}
