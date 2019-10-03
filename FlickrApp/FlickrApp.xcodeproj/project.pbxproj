@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842CDA512345B90900D2C027 /* PhotosSearchDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */; };
+		8468BE022345C71C008E9F01 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468BE012345C71C008E9F01 /* FlickrPhoto.swift */; };
+		84CCF7EA234481F800C7AEA6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7E9234481F800C7AEA6 /* Constant.swift */; };
+		84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */; };
+		84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */; };
+		84CCF7F3234489CC00C7AEA6 /* PhotosSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7F2234489CC00C7AEA6 /* PhotosSearch.swift */; };
+		84CCF7F92344946200C7AEA6 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7F62344946200C7AEA6 /* WebService.swift */; };
+		84CCF7FA2344946200C7AEA6 /* PhotosSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7F82344946200C7AEA6 /* PhotosSearchService.swift */; };
+		84CCF8002345301A00C7AEA6 /* ResponseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7FF2345301A00C7AEA6 /* ResponseModelProtocol.swift */; };
+		84CCF8022345309400C7AEA6 /* WebServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF8012345309400C7AEA6 /* WebServiceDelegate.swift */; };
 		84E32D202343EBD70079DE07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E32D1F2343EBD70079DE07 /* AppDelegate.swift */; };
 		84E32D222343EBD70079DE07 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E32D212343EBD70079DE07 /* ImageListViewController.swift */; };
 		84E32D242343EBD70079DE07 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E32D232343EBD70079DE07 /* ImageDetailsViewController.swift */; };
@@ -35,6 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchDeserializer.swift; sourceTree = "<group>"; };
+		8468BE012345C71C008E9F01 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		84CCF7E9234481F800C7AEA6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDeserializerProtocol.swift; sourceTree = "<group>"; };
+		84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModelProtocol.swift; sourceTree = "<group>"; };
+		84CCF7F2234489CC00C7AEA6 /* PhotosSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSearch.swift; sourceTree = "<group>"; };
+		84CCF7F62344946200C7AEA6 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		84CCF7F82344946200C7AEA6 /* PhotosSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSearchService.swift; sourceTree = "<group>"; };
+		84CCF7FF2345301A00C7AEA6 /* ResponseModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModelProtocol.swift; sourceTree = "<group>"; };
+		84CCF8012345309400C7AEA6 /* WebServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceDelegate.swift; sourceTree = "<group>"; };
 		84E32D1C2343EBD70079DE07 /* FlickrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E32D1F2343EBD70079DE07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E32D212343EBD70079DE07 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
@@ -76,13 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84CCF7E223447AFD00C7AEA6 /* Controller */ = {
+		84CCF7E223447AFD00C7AEA6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				84E32D212343EBD70079DE07 /* ImageListViewController.swift */,
 				84E32D232343EBD70079DE07 /* ImageDetailsViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		84CCF7E323447B0900C7AEA6 /* UI */ = {
@@ -94,11 +114,44 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		84CCF7E423447E6900C7AEA6 /* Resources */ = {
+		84CCF7ED234489A800C7AEA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84CCF7E9234481F800C7AEA6 /* Constant.swift */,
+				8468BE012345C71C008E9F01 /* FlickrPhoto.swift */,
 			);
-			path = Resources;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84CCF7F52344943A00C7AEA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84CCF8032345325600C7AEA6 /* Protocols */,
+				84CCF7F72344946200C7AEA6 /* PhotosSearch */,
+				84CCF7F62344946200C7AEA6 /* WebService.swift */,
+				84CCF8012345309400C7AEA6 /* WebServiceDelegate.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84CCF7F72344946200C7AEA6 /* PhotosSearch */ = {
+			isa = PBXGroup;
+			children = (
+				84CCF7F2234489CC00C7AEA6 /* PhotosSearch.swift */,
+				84CCF7F82344946200C7AEA6 /* PhotosSearchService.swift */,
+				842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */,
+			);
+			path = PhotosSearch;
+			sourceTree = "<group>";
+		};
+		84CCF8032345325600C7AEA6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */,
+				84CCF7FF2345301A00C7AEA6 /* ResponseModelProtocol.swift */,
+				84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		84E32D132343EBD70079DE07 = {
@@ -124,9 +177,10 @@
 		84E32D1E2343EBD70079DE07 /* FlickrApp */ = {
 			isa = PBXGroup;
 			children = (
-				84CCF7E423447E6900C7AEA6 /* Resources */,
+				84CCF7ED234489A800C7AEA6 /* Models */,
+				84CCF7F52344943A00C7AEA6 /* Services */,
+				84CCF7E223447AFD00C7AEA6 /* Controllers */,
 				84CCF7E323447B0900C7AEA6 /* UI */,
-				84CCF7E223447AFD00C7AEA6 /* Controller */,
 				84E32D1F2343EBD70079DE07 /* AppDelegate.swift */,
 				84E32D282343EBD70079DE07 /* Assets.xcassets */,
 				84E32D2D2343EBD70079DE07 /* Info.plist */,
@@ -283,9 +337,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CCF7F92344946200C7AEA6 /* WebService.swift in Sources */,
+				84CCF7EA234481F800C7AEA6 /* Constant.swift in Sources */,
+				84CCF8002345301A00C7AEA6 /* ResponseModelProtocol.swift in Sources */,
 				84E32D242343EBD70079DE07 /* ImageDetailsViewController.swift in Sources */,
+				84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */,
+				8468BE022345C71C008E9F01 /* FlickrPhoto.swift in Sources */,
 				84E32D222343EBD70079DE07 /* ImageListViewController.swift in Sources */,
+				84CCF7FA2344946200C7AEA6 /* PhotosSearchService.swift in Sources */,
+				842CDA512345B90900D2C027 /* PhotosSearchDeserializer.swift in Sources */,
+				84CCF7F3234489CC00C7AEA6 /* PhotosSearch.swift in Sources */,
+				84CCF8022345309400C7AEA6 /* WebServiceDelegate.swift in Sources */,
 				84E32D202343EBD70079DE07 /* AppDelegate.swift in Sources */,
+				84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
