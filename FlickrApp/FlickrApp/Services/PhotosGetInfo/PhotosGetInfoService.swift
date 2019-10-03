@@ -9,7 +9,7 @@
 import Foundation
 
 class PhotosGetInfoService : WebService {
-    func search(requestModel: PhotosGetInfo.RequestModel) {
+    func getInfo(requestModel: PhotosGetInfo.RequestModel) {
         let deserializer = PhotosGetInfoDeserializer()
         processRequest(requestModel: requestModel, deserializer: deserializer)
     }

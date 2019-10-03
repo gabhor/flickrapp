@@ -23,18 +23,17 @@ struct FlickrPhotoDetails {
     let taken: String?
 
     static func fromJsonData(_ jsonData: [String: Any]) -> FlickrPhotoDetails {
-        let photoData = jsonData[Constant.FlickrPhoto.photoKey] as? [String: Any]
-        let ownerData = photoData?[Constant.FlickrPhoto.ownerKey] as? [String: Any]
-        let titleData = photoData?[Constant.FlickrPhoto.titleKey] as? [String: Any]
-        let descriptionData = photoData?[Constant.FlickrPhoto.descriptionKey] as? [String: Any]
-        let datesData = photoData?[Constant.FlickrPhoto.datesKey] as? [String: Any]
+        let ownerData = jsonData[Constant.FlickrPhoto.ownerKey] as? [String: Any]
+        let titleData = jsonData[Constant.FlickrPhoto.titleKey] as? [String: Any]
+        let descriptionData = jsonData[Constant.FlickrPhoto.descriptionKey] as? [String: Any]
+        let datesData = jsonData[Constant.FlickrPhoto.datesKey] as? [String: Any]
 
-        return FlickrPhotoDetails(photoId: photoData?[Constant.FlickrPhoto.idKey] as? String,
-                                  secret: photoData?[Constant.FlickrPhoto.secretKey] as? String,
-                                  server: photoData?[Constant.FlickrPhoto.serverKey] as? String,
-                                  farm: photoData?[Constant.FlickrPhoto.farmKey] as? Int,
-                                  originalSecret: photoData?[Constant.FlickrPhoto.originalSecretKey] as? String,
-                                  originalFormat: photoData?[Constant.FlickrPhoto.originalFormatKey] as? String,
+        return FlickrPhotoDetails(photoId: jsonData[Constant.FlickrPhoto.idKey] as? String,
+                                  secret: jsonData[Constant.FlickrPhoto.secretKey] as? String,
+                                  server: jsonData[Constant.FlickrPhoto.serverKey] as? String,
+                                  farm: jsonData[Constant.FlickrPhoto.farmKey] as? Int,
+                                  originalSecret: jsonData[Constant.FlickrPhoto.originalSecretKey] as? String,
+                                  originalFormat: jsonData[Constant.FlickrPhoto.originalFormatKey] as? String,
                                   ownerUserName: ownerData?[Constant.FlickrPhoto.userNameKey] as? String,
                                   ownerRealName: ownerData?[Constant.FlickrPhoto.realNameKey] as? String,
                                   title: titleData?[Constant.FlickrPhoto.contentKey] as? String,
