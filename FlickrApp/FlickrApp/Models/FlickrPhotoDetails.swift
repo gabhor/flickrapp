@@ -41,9 +41,15 @@ struct FlickrPhotoDetails {
                                   taken: datesData?[Constant.FlickrPhoto.takenDateKey] as? String)
     }
 
-    func imageUrl() -> URL? {
+    func originalImageUrl() -> URL? {
         guard let farm = farm, let server = server, let photoId = photoId, let originalSecret = originalSecret, let originalFormat = originalFormat else { return .none }
         let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoId)_\(originalSecret)_o.\(originalFormat))"
+        return URL(string: urlString)
+    }
+
+    func largeImageUrl() -> URL? {
+        guard let farm = farm, let server = server, let photoId = photoId, let secret = secret else { return .none }
+        let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoId)_\(secret)_b.jpg)"
         return URL(string: urlString)
     }
 }

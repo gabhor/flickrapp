@@ -9,13 +9,26 @@
 import UIKit
 
 extension UIImageView {
+
     func load(url: URL) {
+        let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        activityIndicatorView.center = CGPoint(x: frame.size.width/2, y:frame.size.height/2)
+        activityIndicatorView.startAnimating()
+        addSubview(activityIndicatorView)
+        
         DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
+                if let data = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async {
+                        if let image = UIImage(data: data) {
+                                activityIndicatorView.removeFromSuperview()
+                                self?.image = image
+                        } else {
+                                activityIndicatorView.removeFromSuperview()
+                        }
                     }
+            } else {
+                DispatchQueue.main.async {
+                    activityIndicatorView.removeFromSuperview()
                 }
             }
         }

@@ -17,8 +17,8 @@ class ImageDetailsPresenter {
         photoInfoService.delegate = self
     }
 
-    func getDetails(with photoId: String) {
-        let requestModel = PhotosGetInfo.RequestModel(photoId: photoId, secret: nil)
+    func getDetails(with photoId: String, secret: String) {
+        let requestModel = PhotosGetInfo.RequestModel(photoId: photoId, secret: secret)
         photoInfoService.getInfo(requestModel: requestModel)
     }
 }

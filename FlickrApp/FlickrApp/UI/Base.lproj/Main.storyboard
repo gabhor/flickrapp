@@ -32,15 +32,57 @@
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IU2-r1-WY8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f45-Qh-SD9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="f45-Qh-SD9" firstAttribute="width" secondItem="IU2-r1-WY8" secondAttribute="width" id="H3a-Gz-zpv"/>
+                                    <constraint firstItem="f45-Qh-SD9" firstAttribute="top" secondItem="IU2-r1-WY8" secondAttribute="top" id="KrI-D9-LwX"/>
+                                    <constraint firstItem="f45-Qh-SD9" firstAttribute="leading" secondItem="IU2-r1-WY8" secondAttribute="leading" id="UKS-hM-gl5"/>
+                                    <constraint firstItem="f45-Qh-SD9" firstAttribute="bottom" secondItem="IU2-r1-WY8" secondAttribute="bottom" id="eFG-UN-mbw"/>
+                                    <constraint firstItem="f45-Qh-SD9" firstAttribute="height" secondItem="IU2-r1-WY8" secondAttribute="height" id="fFG-cL-6eL"/>
+                                    <constraint firstItem="f45-Qh-SD9" firstAttribute="trailing" secondItem="IU2-r1-WY8" secondAttribute="trailing" id="mhb-Su-tex"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvZ-iB-Ulg">
+                                <rect key="frame" x="16" y="821" width="382" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="0N0-76-zZc"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="zMK-dZ-Aq6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IU2-r1-WY8" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="0Bl-XK-sm5"/>
+                            <constraint firstItem="TvZ-iB-Ulg" firstAttribute="top" secondItem="IU2-r1-WY8" secondAttribute="bottom" constant="8" id="2Xr-Df-H8K"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="TvZ-iB-Ulg" secondAttribute="trailing" constant="16" id="ALh-dS-F1Q"/>
+                            <constraint firstItem="IU2-r1-WY8" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" id="Vph-v8-2Lw"/>
+                            <constraint firstItem="TvZ-iB-Ulg" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="16" id="fRs-N6-kIk"/>
+                            <constraint firstItem="IU2-r1-WY8" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="mmz-IN-o5H"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="TvZ-iB-Ulg" secondAttribute="bottom" constant="16" id="qqq-Zo-D5U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="detailsLabel" destination="TvZ-iB-Ulg" id="dGQ-IP-MQc"/>
+                        <outlet property="imageView" destination="f45-Qh-SD9" id="jx3-Z1-mHb"/>
+                        <outlet property="scrollView" destination="IU2-r1-WY8" id="JAH-Dd-ITi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708.69565217391312" y="128.57142857142856"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -128,6 +170,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="05e-VF-ejb" id="pcX-Mu-6bM"/>
+                                    <outlet property="delegate" destination="05e-VF-ejb" id="Sqd-tx-02D"/>
                                 </connections>
                             </collectionView>
                         </subviews>
