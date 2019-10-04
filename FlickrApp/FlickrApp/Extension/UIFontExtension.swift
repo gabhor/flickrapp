@@ -11,7 +11,7 @@ import UIKit
 extension UIFont {
 
     static var homeScreenHeaderFont: UIFont {
-        return UIFont(name: "Amperzand", size: 32.0) ?? UIFont.systemFont(ofSize: 32.0)
+        return UIFont(name: "Amperzand", size: 28.0) ?? UIFont.systemFont(ofSize: 28.0)
     }
 
     static var lightFont: UIFont {

@@ -19,6 +19,10 @@ class ImageDetailsViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var detailsLabel: UILabel!
 
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
@@ -39,8 +43,6 @@ extension ImageDetailsViewController: ImageDetailsViewProtocol {
     func update(with error: Error) {
         //TODO: Error handling
     }
-
-
 }
 
 extension ImageDetailsViewController: UIScrollViewDelegate {
