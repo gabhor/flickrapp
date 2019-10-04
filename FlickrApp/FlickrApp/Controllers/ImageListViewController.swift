@@ -45,8 +45,13 @@ class ImageListViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-//        coordinator.animateAlongsideTransition(in: <#T##UIView?#>, animation: <#T##((UIViewControllerTransitionCoordinatorContext) -> Void)?##((UIViewControllerTransitionCoordinatorContext) -> Void)?##(UIViewControllerTransitionCoordinatorContext) -> Void#>, completion: <#T##((UIViewControllerTransitionCoordinatorContext) -> Void)?##((UIViewControllerTransitionCoordinatorContext) -> Void)?##(UIViewControllerTransitionCoordinatorContext) -> Void#>)
-//        updateThumbnails()
+        coordinator.animate(alongsideTransition: nil, completion: {
+            [weak self] _ in
+            guard let strongSelf = self else { return }
+            DispatchQueue.main.async {
+                strongSelf.updateThumbnails()
+            }
+        })
     }
 }
 
