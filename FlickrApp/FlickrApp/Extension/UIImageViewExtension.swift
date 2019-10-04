@@ -31,11 +31,14 @@ extension UIImageView {
                                 self?.image = image
                         } else {
                                 activityIndicatorView.removeFromSuperview()
+                                self?.image = #imageLiteral(resourceName: "missing-image")
+
                         }
                     }
             } else {
                 DispatchQueue.main.async {
                     activityIndicatorView.removeFromSuperview()
+                    self?.image = #imageLiteral(resourceName: "missing-image")
                 }
             }
         }
