@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ImageListViewProtocol : class {
-    func update(with photoList:[FlickrPhoto])
+    func isLoading(_ loading: Bool)
+    func refresh()
     func update(with error:Error)
 }

@@ -11,7 +11,6 @@ import UIKit
 class ImageListViewController: UIViewController {
 
     var detailViewController: ImageDetailsViewController? = nil
-    private var photos = [FlickrPhoto]()
     private var presenter = ImageListPresenter()
 
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -34,13 +33,20 @@ class ImageListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.App.showDetailSegue {
             if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell) {
-                let object = photos[indexPath.row]
+                let object = presenter.photo(at: indexPath.row)
                 let controller = (segue.destination as! UINavigationController).topViewController as! ImageDetailsViewController
                 controller.detailItem = object
+                controller.photoPreview = cell.getImage()
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+//        coordinator.animateAlongsideTransition(in: <#T##UIView?#>, animation: <#T##((UIViewControllerTransitionCoordinatorContext) -> Void)?##((UIViewControllerTransitionCoordinatorContext) -> Void)?##(UIViewControllerTransitionCoordinatorContext) -> Void#>, completion: <#T##((UIViewControllerTransitionCoordinatorContext) -> Void)?##((UIViewControllerTransitionCoordinatorContext) -> Void)?##(UIViewControllerTransitionCoordinatorContext) -> Void#>)
+//        updateThumbnails()
     }
 }
 
@@ -53,17 +59,26 @@ extension ImageListViewController : UISearchBarDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelsegate
+
+extension ImageListViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == presenter.numberOfPhotos()-1 {
+            presenter.loadNextPage()
+        }
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 
 extension ImageListViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return presenter.numberOfPhotos()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.App.photoCellIdentifier, for: indexPath)
-        let photoData = photos[indexPath.row]
-        if let cell = cell as? PhotoCell {
+        if let cell = cell as? PhotoCell, let photoData = presenter.photo(at: indexPath.row) {
             cell.displayPhoto(photoData)
         }
         return cell
@@ -83,12 +98,16 @@ extension ImageListViewController : UICollectionViewDelegateFlowLayout {
 // MARK: - ImageListViewProtocol
 
 extension ImageListViewController : ImageListViewProtocol {
-    func update(with photoList: [FlickrPhoto]) {
-        updateThumbnails(photoList)
+    func isLoading(_ loading: Bool) {
+        searchBar.searchTextField.isEnabled = !loading
+    }
+
+    func refresh() {
+        updateThumbnails()
     }
 
     func update(with error: Error) {
-        updateThumbnails([])
+        updateThumbnails()
     }
 }
 
@@ -96,9 +115,21 @@ extension ImageListViewController : ImageListViewProtocol {
 
 private extension ImageListViewController {
     func initUserInterface() {
+        title = "mainScreenTitle".localized
         initSplitView()
         initSearchBar()
         initCollectionView()
+        initAppearance()
+    }
+
+    func initAppearance() {
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        collectionView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        searchBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                                                   NSAttributedString.Key.font: UIFont.homeScreenHeaderFont]
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+
     }
 
     func initSplitView() {
@@ -113,18 +144,15 @@ private extension ImageListViewController {
     }
 
     func initSearchBar() {
-        searchBar.text = Constant.App.initialSearchText 
+        searchBar.text = presenter.initialSearchText()
     }
 
     func startSearch() {
         guard let keyword = searchBar.text else { return }
-
-        updateThumbnails([])
         presenter.startSearch(with: keyword)
     }
 
-    func updateThumbnails(_ list: [FlickrPhoto]) {
-        photos = list
+    func updateThumbnails() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }

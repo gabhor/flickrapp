@@ -12,9 +12,14 @@ class PhotoCell : UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
 
     func displayPhoto(_ photoData: FlickrPhoto) {
-        imageView.image = .none
+        imageView.image = #imageLiteral(resourceName: "placeholderImage")
+
         if let url = photoData.thumbnailUrl() {
             imageView.load(url: url)
         }
+    }
+
+    func getImage() -> UIImage? {
+        return imageView.image
     }
 }

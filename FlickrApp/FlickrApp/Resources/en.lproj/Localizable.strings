@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  FlickrApp
+
+  Created by Gabor Horvath on 2019. 10. 04..
+  Copyright © 2019. Gabor Horvath. All rights reserved.
+*/
+
+"mainScreenTitle" = "FlickrApp";
+"detailsScreenTitle" = "Photo details";
+

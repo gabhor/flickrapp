@@ -15,6 +15,8 @@ public enum Constant {
         public static let photoCellIdentifier = "PhotoCell"
         public static let showDetailSegue = "showDetail"
         public static let initialSearchText = "dog"
+        public static let perPageDefaultValue = 20
+        public static let storedKeywordKey = "kStoredSearchjKeyword"
     }
     public enum FlickrService {
 
@@ -24,9 +26,6 @@ public enum Constant {
         public static let apiKey = "65803e8f6e4a3982200621cad356be51"
         public static let format = "json"
         public static let noJsonCallback = "1"
-
-        // default values
-        public static let perPageDefaultValue = 20
 
         public enum Method {
 
@@ -97,7 +96,7 @@ public enum Constant {
 
     public enum PhotoUrl {
 
-            public static let thumbnail = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_t.jpg"
+            public static let thumbnail = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_m.jpg"
             public static let large = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_b.jpg"
             public static let original = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[ORIGINALSECRET]_o.[ORIGINALFORMAT])"
 

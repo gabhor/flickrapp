@@ -1,0 +1,12 @@
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Detail";
+
+/* Class = "UINavigationItem"; title = "FlickrApp"; ObjectID = "MU1-ut-afK"; */
+"MU1-ut-afK.title" = "FlickrApp";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TvZ-iB-Ulg"; */
+"TvZ-iB-Ulg.text" = "Label";

@@ -32,7 +32,7 @@ struct PhotosSearch {
             if let perPage = perPage {
                 queryData[Constant.RequestParameter.perPage] = "\(perPage)"
             } else {
-                queryData[Constant.RequestParameter.perPage] = "\(Constant.FlickrService.perPageDefaultValue)"
+                queryData[Constant.RequestParameter.perPage] = "\(Constant.App.perPageDefaultValue)"
             }
 
             if let page = page {

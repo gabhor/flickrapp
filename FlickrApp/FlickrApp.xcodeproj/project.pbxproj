@@ -19,8 +19,17 @@
 		84178D6823465EC200F54389 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D6723465EC200F54389 /* ImageDetailsPresenter.swift */; };
 		84178D6A23465EDD00F54389 /* ImageDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D6923465EDD00F54389 /* ImageDetailsViewProtocol.swift */; };
 		84178D6B23467C3D00F54389 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D5D23464E0900F54389 /* DictionaryExtension.swift */; };
+		84178D812346B1BB00F54389 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84178D832346B1BB00F54389 /* Localizable.strings */; };
+		84178D852346B1F700F54389 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D842346B1F700F54389 /* StringExtension.swift */; };
 		842CDA512345B90900D2C027 /* PhotosSearchDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */; };
 		8468BE022345C71C008E9F01 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468BE012345C71C008E9F01 /* FlickrPhoto.swift */; };
+		848D93C3234787F60064C06F /* AppDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D93C2234787F60064C06F /* AppDataService.swift */; };
+		84C403D523479E41009D350B /* Exo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D423479E3E009D350B /* Exo-Light.ttf */; };
+		84C403D823479E94009D350B /* Exo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D723479E84009D350B /* Exo-ExtraLight.ttf */; };
+		84C403D923479E9B009D350B /* Exo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D623479E78009D350B /* Exo-Bold.ttf */; };
+		84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403DE2347A01E009D350B /* Amperzand.ttf */; };
+		84C403E12347A198009D350B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C403E02347A198009D350B /* UIFontExtension.swift */; };
+		84C403E32347A325009D350B /* Exo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403E22347A325009D350B /* Exo-Thin.ttf */; };
 		84CCF7EA234481F800C7AEA6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7E9234481F800C7AEA6 /* Constant.swift */; };
 		84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */; };
 		84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */; };
@@ -68,8 +77,20 @@
 		84178D632346510100F54389 /* PhotosGetInfoDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGetInfoDeserializer.swift; sourceTree = "<group>"; };
 		84178D6723465EC200F54389 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		84178D6923465EDD00F54389 /* ImageDetailsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewProtocol.swift; sourceTree = "<group>"; };
+		84178D822346B1BB00F54389 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84178D842346B1F700F54389 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		84178D872346BA4500F54389 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		84178D882346BA4500F54389 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Main.strings; sourceTree = "<group>"; };
+		84178D892346BA4500F54389 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchDeserializer.swift; sourceTree = "<group>"; };
 		8468BE012345C71C008E9F01 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		848D93C2234787F60064C06F /* AppDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataService.swift; sourceTree = "<group>"; };
+		84C403D423479E3E009D350B /* Exo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Light.ttf"; sourceTree = "<group>"; };
+		84C403D623479E78009D350B /* Exo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Bold.ttf"; sourceTree = "<group>"; };
+		84C403D723479E84009D350B /* Exo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		84C403DE2347A01E009D350B /* Amperzand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amperzand.ttf; sourceTree = "<group>"; };
+		84C403E02347A198009D350B /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		84C403E22347A325009D350B /* Exo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Thin.ttf"; sourceTree = "<group>"; };
 		84CCF7E9234481F800C7AEA6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDeserializerProtocol.swift; sourceTree = "<group>"; };
 		84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModelProtocol.swift; sourceTree = "<group>"; };
@@ -132,6 +153,8 @@
 			children = (
 				84178D0D2346209500F54389 /* UIImageViewExtension.swift */,
 				84178D5D23464E0900F54389 /* DictionaryExtension.swift */,
+				84178D842346B1F700F54389 /* StringExtension.swift */,
+				84C403E02347A198009D350B /* UIFontExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -162,6 +185,38 @@
 				84178D632346510100F54389 /* PhotosGetInfoDeserializer.swift */,
 			);
 			path = PhotosGetInfo;
+			sourceTree = "<group>";
+		};
+		84178D7E2346B19200F54389 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84C403DE2347A01E009D350B /* Amperzand.ttf */,
+				84C403E22347A325009D350B /* Exo-Thin.ttf */,
+				84C403D723479E84009D350B /* Exo-ExtraLight.ttf */,
+				84C403D423479E3E009D350B /* Exo-Light.ttf */,
+				84C403D623479E78009D350B /* Exo-Bold.ttf */,
+				84178D832346B1BB00F54389 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		848D93C4234787FB0064C06F /* AppDataService */ = {
+			isa = PBXGroup;
+			children = (
+				848D93C2234787F60064C06F /* AppDataService.swift */,
+			);
+			path = AppDataService;
+			sourceTree = "<group>";
+		};
+		848D93C5234788060064C06F /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				84CCF7F62344946200C7AEA6 /* WebService.swift */,
+				84CCF8032345325600C7AEA6 /* Protocols */,
+				84CCF7F72344946200C7AEA6 /* PhotosSearch */,
+				84178D5A23464C7300F54389 /* PhotosGetInfo */,
+			);
+			path = WebServices;
 			sourceTree = "<group>";
 		};
 		84CCF7E223447AFD00C7AEA6 /* Controllers */ = {
@@ -196,10 +251,8 @@
 		84CCF7F52344943A00C7AEA6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				84CCF7F62344946200C7AEA6 /* WebService.swift */,
-				84CCF8032345325600C7AEA6 /* Protocols */,
-				84CCF7F72344946200C7AEA6 /* PhotosSearch */,
-				84178D5A23464C7300F54389 /* PhotosGetInfo */,
+				848D93C4234787FB0064C06F /* AppDataService */,
+				848D93C5234788060064C06F /* WebServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -248,6 +301,7 @@
 		84E32D1E2343EBD70079DE07 /* FlickrApp */ = {
 			isa = PBXGroup;
 			children = (
+				84178D7E2346B19200F54389 /* Resources */,
 				84178D0C2346208200F54389 /* Extension */,
 				84CCF7ED234489A800C7AEA6 /* Models */,
 				84CCF7F52344943A00C7AEA6 /* Services */,
@@ -366,6 +420,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hu,
 			);
 			mainGroup = 84E32D132343EBD70079DE07;
 			productRefGroup = 84E32D1D2343EBD70079DE07 /* Products */;
@@ -384,9 +439,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */,
+				84178D812346B1BB00F54389 /* Localizable.strings in Resources */,
 				84E32D2C2343EBD70079DE07 /* LaunchScreen.storyboard in Resources */,
 				84E32D292343EBD70079DE07 /* Assets.xcassets in Resources */,
+				84C403E32347A325009D350B /* Exo-Thin.ttf in Resources */,
+				84C403D523479E41009D350B /* Exo-Light.ttf in Resources */,
 				84E32D272343EBD70079DE07 /* Main.storyboard in Resources */,
+				84C403D823479E94009D350B /* Exo-ExtraLight.ttf in Resources */,
+				84C403D923479E9B009D350B /* Exo-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +479,7 @@
 				84E32D242343EBD70079DE07 /* ImageDetailsViewController.swift in Sources */,
 				84178D5C23464C9700F54389 /* PhotosGetInfo.swift in Sources */,
 				84178D62234650AE00F54389 /* PhotosGetInfoService.swift in Sources */,
+				84178D852346B1F700F54389 /* StringExtension.swift in Sources */,
 				84178D602346503000F54389 /* FlickrPhotoDetails.swift in Sources */,
 				84178D0E2346209500F54389 /* UIImageViewExtension.swift in Sources */,
 				84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */,
@@ -425,9 +487,11 @@
 				84178D6823465EC200F54389 /* ImageDetailsPresenter.swift in Sources */,
 				84E32D222343EBD70079DE07 /* ImageListViewController.swift in Sources */,
 				84CCF7FA2344946200C7AEA6 /* PhotosSearchService.swift in Sources */,
+				848D93C3234787F60064C06F /* AppDataService.swift in Sources */,
 				84178D5223462B7400F54389 /* ImageListPresenter.swift in Sources */,
 				84178D6A23465EDD00F54389 /* ImageDetailsViewProtocol.swift in Sources */,
 				842CDA512345B90900D2C027 /* PhotosSearchDeserializer.swift in Sources */,
+				84C403E12347A198009D350B /* UIFontExtension.swift in Sources */,
 				84178D572346311400F54389 /* ImageListViewProtocol.swift in Sources */,
 				84CCF7F3234489CC00C7AEA6 /* PhotosSearch.swift in Sources */,
 				84178D5E23464E0900F54389 /* DictionaryExtension.swift in Sources */,
@@ -471,10 +535,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		84178D832346B1BB00F54389 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84178D822346B1BB00F54389 /* en */,
+				84178D892346BA4500F54389 /* hu */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		84E32D252343EBD70079DE07 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				84E32D262343EBD70079DE07 /* Base */,
+				84178D882346BA4500F54389 /* hu */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -483,6 +557,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				84E32D2B2343EBD70079DE07 /* Base */,
+				84178D872346BA4500F54389 /* hu */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -494,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -555,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
