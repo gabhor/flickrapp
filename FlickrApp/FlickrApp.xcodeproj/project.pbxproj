@@ -30,6 +30,7 @@
 		84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403DE2347A01E009D350B /* Amperzand.ttf */; };
 		84C403E12347A198009D350B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C403E02347A198009D350B /* UIFontExtension.swift */; };
 		84C403E32347A325009D350B /* Exo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403E22347A325009D350B /* Exo-Thin.ttf */; };
+		84C403E72347D2A9009D350B /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C403E62347D2A9009D350B /* SplitViewController.swift */; };
 		84CCF7EA234481F800C7AEA6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7E9234481F800C7AEA6 /* Constant.swift */; };
 		84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */; };
 		84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */; };
@@ -91,6 +92,7 @@
 		84C403DE2347A01E009D350B /* Amperzand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amperzand.ttf; sourceTree = "<group>"; };
 		84C403E02347A198009D350B /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		84C403E22347A325009D350B /* Exo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Thin.ttf"; sourceTree = "<group>"; };
+		84C403E62347D2A9009D350B /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		84CCF7E9234481F800C7AEA6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDeserializerProtocol.swift; sourceTree = "<group>"; };
 		84CCF7EF234489C200C7AEA6 /* RequestModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModelProtocol.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				84E32D1F2343EBD70079DE07 /* AppDelegate.swift */,
 				84E32D282343EBD70079DE07 /* Assets.xcassets */,
 				84E32D2D2343EBD70079DE07 /* Info.plist */,
+				84C403E62347D2A9009D350B /* SplitViewController.swift */,
 			);
 			path = FlickrApp;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				84178D852346B1F700F54389 /* StringExtension.swift in Sources */,
 				84178D602346503000F54389 /* FlickrPhotoDetails.swift in Sources */,
 				84178D0E2346209500F54389 /* UIImageViewExtension.swift in Sources */,
+				84C403E72347D2A9009D350B /* SplitViewController.swift in Sources */,
 				84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */,
 				8468BE022345C71C008E9F01 /* FlickrPhoto.swift in Sources */,
 				84178D6823465EC200F54389 /* ImageDetailsPresenter.swift in Sources */,
