@@ -18,7 +18,11 @@ public enum Constant {
         public static let initialSearchText = "dog"
         public static let perPageDefaultValue = 20
         public static let storedKeywordKey = "kStoredSearchjKeyword"
-        public static let logLevel = LogLevel.debug
+        #if DEBUG
+            public static let logLevel = LogLevel.debug
+        #else
+            public static let logLevel = LogLevel.error
+        #endif
     }
     public enum FlickrService {
 
