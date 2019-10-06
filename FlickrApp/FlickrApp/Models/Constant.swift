@@ -25,6 +25,7 @@ public enum Constant {
         public static let defaultTimeoutInterval = 30
         public static let apiKey = "65803e8f6e4a3982200621cad356be51"
         public static let format = "json"
+        public static let media = "photos"
         public static let noJsonCallback = "1"
 
         public enum Method {
@@ -52,6 +53,7 @@ public enum Constant {
         public static let page = "page"
         public static let photoId = "photo_id"
         public static let secret = "secret"
+        public static let media = "media"
     }
 
     public enum ResponseParameter {

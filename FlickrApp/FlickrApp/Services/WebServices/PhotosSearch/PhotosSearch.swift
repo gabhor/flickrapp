@@ -23,6 +23,7 @@ struct PhotosSearch {
                 Constant.RequestParameter.method: Constant.FlickrService.Method.photosSearch,
                     Constant.RequestParameter.apiKey: Constant.FlickrService.apiKey,
                     Constant.RequestParameter.format: Constant.FlickrService.format,
+                    Constant.RequestParameter.media: Constant.FlickrService.media,
                     Constant.RequestParameter.noJsonCallback: Constant.FlickrService.noJsonCallback]
 
             if let text = text {
