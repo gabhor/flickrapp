@@ -58,7 +58,7 @@ private extension ImageDetailsViewController {
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         detailsLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         initGestureRecognizer()
-        detailsLabel.font = UIFont.thinFont
+        detailsLabel.font = UIFont.extraLightFont
     }
 
     func initGestureRecognizer() {
@@ -128,21 +128,18 @@ private extension ImageDetailsViewController {
             }
 
             if let userName = photoDetails.ownerUserName {
-                attributedDescription.append(NSAttributedString(string: "\n\(userName)", attributes: [NSAttributedString.Key.font: UIFont.thinFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
+                attributedDescription.append(NSAttributedString(string: "\n\(userName)", attributes: [NSAttributedString.Key.font: UIFont.extraLightFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
             }
 
             if let realName = photoDetails.ownerRealName, realName.count > 0 {
-                attributedDescription.append(NSAttributedString(string: " (\(realName))", attributes: [NSAttributedString.Key.font: UIFont.thinFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
+                attributedDescription.append(NSAttributedString(string: " (\(realName))", attributes: [NSAttributedString.Key.font: UIFont.extraLightFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
             }
 
             if let date = photoDetails.taken {
-                attributedDescription.append(NSAttributedString(string: "\n\(date)", attributes: [NSAttributedString.Key.font: UIFont.smallThinFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
+                attributedDescription.append(NSAttributedString(string: "\n\(date)", attributes: [NSAttributedString.Key.font: UIFont.smallExtraLightFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
             }
 
-
             self.detailsLabel.attributedText = attributedDescription
-
-//                = "\(photoDetails.title ?? "")\n\(photoDetails.ownerUserName ?? "") (\(photoDetails.ownerRealName ?? ""))\n\(photoDetails.taken ?? "")"
         } else {
             self.detailsLabel.text = ""
         }

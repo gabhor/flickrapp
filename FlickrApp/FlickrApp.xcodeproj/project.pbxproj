@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84032349234A62450053B30D /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84032348234A62450053B30D /* UrlImageView.swift */; };
 		84178D0A2346047000F54389 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D092346047000F54389 /* PhotoCell.swift */; };
 		84178D0E2346209500F54389 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D0D2346209500F54389 /* UIImageViewExtension.swift */; };
 		84178D5223462B7400F54389 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D5123462B7400F54389 /* ImageListPresenter.swift */; };
@@ -29,10 +30,8 @@
 		84A5B300234A5470002624F0 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FF234A5470002624F0 /* LogLevel.swift */; };
 		84C403D523479E41009D350B /* Exo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D423479E3E009D350B /* Exo-Light.ttf */; };
 		84C403D823479E94009D350B /* Exo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D723479E84009D350B /* Exo-ExtraLight.ttf */; };
-		84C403D923479E9B009D350B /* Exo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D623479E78009D350B /* Exo-Bold.ttf */; };
 		84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403DE2347A01E009D350B /* Amperzand.ttf */; };
 		84C403E12347A198009D350B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C403E02347A198009D350B /* UIFontExtension.swift */; };
-		84C403E32347A325009D350B /* Exo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403E22347A325009D350B /* Exo-Thin.ttf */; };
 		84C403E72347D2A9009D350B /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C403E62347D2A9009D350B /* SplitViewController.swift */; };
 		84CCF7EA234481F800C7AEA6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7E9234481F800C7AEA6 /* Constant.swift */; };
 		84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */; };
@@ -70,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84032348234A62450053B30D /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		84178D092346047000F54389 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		84178D0D2346209500F54389 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		84178D5123462B7400F54389 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
@@ -93,11 +93,9 @@
 		84A5B2FD234A545E002624F0 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		84A5B2FF234A5470002624F0 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		84C403D423479E3E009D350B /* Exo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Light.ttf"; sourceTree = "<group>"; };
-		84C403D623479E78009D350B /* Exo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Bold.ttf"; sourceTree = "<group>"; };
 		84C403D723479E84009D350B /* Exo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		84C403DE2347A01E009D350B /* Amperzand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amperzand.ttf; sourceTree = "<group>"; };
 		84C403E02347A198009D350B /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
-		84C403E22347A325009D350B /* Exo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Thin.ttf"; sourceTree = "<group>"; };
 		84C403E62347D2A9009D350B /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		84CCF7E9234481F800C7AEA6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		84CCF7EE234489C200C7AEA6 /* ResponseDeserializerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDeserializerProtocol.swift; sourceTree = "<group>"; };
@@ -152,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				84178D092346047000F54389 /* PhotoCell.swift */,
+				84032348234A62450053B30D /* UrlImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,10 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				84C403DE2347A01E009D350B /* Amperzand.ttf */,
-				84C403E22347A325009D350B /* Exo-Thin.ttf */,
 				84C403D723479E84009D350B /* Exo-ExtraLight.ttf */,
 				84C403D423479E3E009D350B /* Exo-Light.ttf */,
-				84C403D623479E78009D350B /* Exo-Bold.ttf */,
 				84178D832346B1BB00F54389 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -471,11 +468,9 @@
 				84178D812346B1BB00F54389 /* Localizable.strings in Resources */,
 				84E32D2C2343EBD70079DE07 /* LaunchScreen.storyboard in Resources */,
 				84E32D292343EBD70079DE07 /* Assets.xcassets in Resources */,
-				84C403E32347A325009D350B /* Exo-Thin.ttf in Resources */,
 				84C403D523479E41009D350B /* Exo-Light.ttf in Resources */,
 				84E32D272343EBD70079DE07 /* Main.storyboard in Resources */,
 				84C403D823479E94009D350B /* Exo-ExtraLight.ttf in Resources */,
-				84C403D923479E9B009D350B /* Exo-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +525,7 @@
 				84E32D202343EBD70079DE07 /* AppDelegate.swift in Sources */,
 				84178D642346510100F54389 /* PhotosGetInfoDeserializer.swift in Sources */,
 				84A5B300234A5470002624F0 /* LogLevel.swift in Sources */,
+				84032349234A62450053B30D /* UrlImageView.swift in Sources */,
 				84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

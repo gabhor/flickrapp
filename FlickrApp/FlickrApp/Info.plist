@@ -24,10 +24,7 @@
 	<array>
 		<string>Exo-Light.ttf</string>
 		<string>Exo-ExtraLight.ttf</string>
-		<string>Exo-Bold.ttf</string>
-		<string>QumpellkaNo12.otf</string>
 		<string>Amperzand.ttf</string>
-		<string>Exo-Thin.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

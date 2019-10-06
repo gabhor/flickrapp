@@ -18,11 +18,11 @@ extension UIFont {
         return UIFont(name: "Exo-Light", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
     }
 
-    static var smallThinFont: UIFont {
-        return UIFont(name: "Exo-Thin", size: 10.0) ?? UIFont.systemFont(ofSize: 10.0)
+    static var extraLightFont: UIFont {
+        return UIFont(name: "Exo-ExtraLight", size: 13.0) ?? UIFont.systemFont(ofSize: 13.0)
     }
 
-    static var thinFont: UIFont {
-        return UIFont(name: "Exo-Thin", size: 13.0) ?? UIFont.systemFont(ofSize: 13.0)
+    static var smallExtraLightFont: UIFont {
+        return UIFont(name: "Exo-ExtraLight", size: 10.0) ?? UIFont.systemFont(ofSize: 10.0)
     }
 }
