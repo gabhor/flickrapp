@@ -13,6 +13,7 @@ class ImageListPresenter {
     private var photos = [FlickrPhoto]()
     private var lastKeyword: String?
     private var isLoading = false
+    private var isLastPageLoaded = false
     let photoSearchService = PhotosSearchService()
 
     init() {
@@ -24,13 +25,14 @@ class ImageListPresenter {
 
         photos = [FlickrPhoto]()
         lastKeyword = keyword
+        isLastPageLoaded = false
         AppDataService.shared.storeSearchKeyword(keyword)
         view?.refresh()
         fetchImageList(with: keyword)
     }
 
     func loadNextPage() {
-        guard !isLoading else { return }
+        guard !isLoading, !isLastPageLoaded else { return }
 
         if let lastKeyword = lastKeyword {
             fetchImageList(with: lastKeyword)
@@ -58,8 +60,10 @@ extension ImageListPresenter : WebServiceDelegate {
     func serviceFinished(withResponse response: ResponseModelProtocol) {
         isLoading = false
         guard let response = response as? PhotosSearch.ResponseModel else { return }
-        if let photoList = response.photos {
+        if let photoList = response.photos, photoList.count > 0 {
             photos.append(contentsOf: photoList)
+        } else {
+            isLastPageLoaded = true
         }
         view?.refresh()
     }
