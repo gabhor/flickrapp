@@ -14,8 +14,10 @@ extension UIImageView {
         let activityIndicatorView = UIActivityIndicatorView(style: .white)
         activityIndicatorView.center = CGPoint(x: frame.size.width/2, y:frame.size.height/2)
         activityIndicatorView.startAnimating()
-        activityIndicatorView.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        activityIndicatorView.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        activityIndicatorView.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        activityIndicatorView.backgroundColor = #colorLiteral(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.5044413527)
+        activityIndicatorView.layer.cornerRadius = activityIndicatorView.bounds.size.height/2
+        activityIndicatorView.layer.masksToBounds = true
 
         addSubview(activityIndicatorView)
 
