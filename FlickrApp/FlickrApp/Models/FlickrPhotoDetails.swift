@@ -41,7 +41,7 @@ struct FlickrPhotoDetails {
                                   taken: datesData?[Constant.ResponseParameter.takenDate] as? String)
     }
 
-    func originalImageUrl() -> URL? {
+    func originalImageUrl() -> String? {
         guard let farm = farm, let server = server, let photoId = photoId, let originalSecret = originalSecret, let originalFormat = originalFormat else { return .none }
 
         var urlString = Constant.PhotoUrl.original
@@ -50,10 +50,10 @@ struct FlickrPhotoDetails {
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.originalSecret, with: originalSecret)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.originalFormat, with: originalFormat)
-        return URL(string: urlString)
+        return urlString
     }
 
-    func largeImageUrl() -> URL? {
+    func largeImageUrl() -> String? {
         guard let farm = farm, let server = server, let photoId = photoId, let secret = secret else { return .none }
 
         var urlString = Constant.PhotoUrl.large
@@ -61,6 +61,6 @@ struct FlickrPhotoDetails {
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.secret, with: secret)
-        return URL(string: urlString)
+        return urlString
     }
 }

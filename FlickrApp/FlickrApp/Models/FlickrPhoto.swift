@@ -27,7 +27,7 @@ struct FlickrPhoto {
                            title: jsonData[Constant.ResponseParameter.title] as? String)
     }
 
-    func thumbnailUrl() -> URL? {
+    func thumbnailUrl() -> String? {
         guard let farm = farm, let server = server, let photoId = photoId, let secret = secret else { return .none }
 
         var urlString = Constant.PhotoUrl.thumbnail
@@ -35,6 +35,6 @@ struct FlickrPhoto {
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.secret, with: secret)
-        return URL(string: urlString)
+        return urlString
     }
 }

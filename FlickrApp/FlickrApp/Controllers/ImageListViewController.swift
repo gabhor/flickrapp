@@ -39,7 +39,6 @@ class ImageListViewController: UIViewController {
                 let object = presenter.photo(at: indexPath.row)
                 let controller = (segue.destination as! UINavigationController).topViewController as! ImageDetailsViewController
                 controller.detailItem = object
-                controller.photoPreview = cell.getImage()
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

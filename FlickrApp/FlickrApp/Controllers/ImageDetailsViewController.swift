@@ -12,7 +12,6 @@ class ImageDetailsViewController: UIViewController {
 
     private var presenter = ImageDetailsPresenter()
     var detailItem: FlickrPhoto?
-    var photoPreview: UIImage?
     var photoDetails: FlickrPhotoDetails?
 
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -99,16 +98,16 @@ private extension ImageDetailsViewController {
 
     func updatePhoto() {
         DispatchQueue.main.async {
-            if let photoPreview = self.photoPreview {
-                self.imageView.image = photoPreview
+            if let thumbnailUrl = self.detailItem?.thumbnailUrl(), let photoPreview = ThumbnailCacheService.shared.getImage(for: thumbnailUrl) {
+                self.imageView.image = UIImage(data: photoPreview)
             } else {
                 self.imageView.image = #imageLiteral(resourceName: "placeholderImage")
             }
 
             if let url = self.photoDetails?.originalImageUrl() {
-                self.imageView.load(url: url)
+                self.imageView.load(urlString: url)
             } else if let url = self.photoDetails?.largeImageUrl() {
-                self.imageView.load(url: url)
+                self.imageView.load(urlString: url)
             }
         }
     }

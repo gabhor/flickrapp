@@ -15,11 +15,7 @@ class PhotoCell : UICollectionViewCell {
         imageView.image = #imageLiteral(resourceName: "placeholderImage")
 
         if let url = photoData.thumbnailUrl() {
-            imageView.load(url: url)
+            imageView.load(urlString: url, cacheEnabled: true)
         }
-    }
-
-    func getImage() -> UIImage? {
-        return imageView.image
     }
 }
