@@ -13,22 +13,19 @@ class WebService {
 
     func processRequest(requestModel: RequestModelProtocol, deserializer: ResponseDeserializerProtocol) {
         guard let requestUrl = URL(string: Constant.FlickrService.restServiceUrl) else { return }
-        if Constant.App.isLogEnabled {
-            print("[FLICKR APP] requestUrl: \(requestUrl)")
-        }
+        LogService.shared.debug("requestUrl: \(requestUrl)")
         let urlRequest = postUrlRequest(requestUrl: requestUrl, postDataString: requestModel.queryDataString())
         let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data: Data?, response: URLResponse?, error: Error?) in
 
             guard let strongSelf = self else { return }
 
-            if Constant.App.isLogEnabled, let response = response {
-                print("[FLICKR APP] response: \(response)")
+            if let response = response {
+                LogService.shared.trace("response: \(response)")
             }
 
             if let error = error {
-                if Constant.App.isLogEnabled {
-                    print("[FLICKR APP] error: \(error)")
-                }
+                LogService.shared.error("error: \(error)")
+
                 strongSelf.handleError(error: error as NSError)
                 return
             }
@@ -46,14 +43,10 @@ class WebService {
             }
 
             do {
-                if Constant.App.isLogEnabled {
-                    print("[FLICKR APP] string response: \(String(data: data, encoding: .utf8) ?? "-")")
-                }
+                LogService.shared.debug("string response: \(String(data: data, encoding: .utf8) ?? "-")")
 
                 let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-                if Constant.App.isLogEnabled {
-                    print("[FLICKR APP] json response: \(jsonData)")
-                }
+                LogService.shared.info("json response: \(jsonData)")
                 let responseModel = deserializer.responseModel(fromJsonData: jsonData)
                 if responseModel.stat == Constant.FlickrService.Result.successful {
                     strongSelf.delegate?.serviceFinished(withResponse: responseModel)

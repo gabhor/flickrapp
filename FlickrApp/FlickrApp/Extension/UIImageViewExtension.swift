@@ -11,10 +11,13 @@ import UIKit
 extension UIImageView {
 
     func load(urlString: String, cacheEnabled: Bool = false) {
+        LogService.shared.debug(" load image - url: \(urlString) cacheEnabled: \(cacheEnabled ? "YES": "NO")")
 
         if cacheEnabled, let imageData = ThumbnailCacheService.shared.getImage(for: urlString), let image = UIImage(data: imageData) {
+            LogService.shared.debug("cached image available")
             self.image = image
         } else {
+            LogService.shared.debug("cached image not available")
             let activityIndicatorView = UIActivityIndicatorView(style: .white)
             activityIndicatorView.center = CGPoint(x: frame.size.width/2, y:frame.size.height/2)
             activityIndicatorView.startAnimating()

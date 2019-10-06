@@ -12,12 +12,13 @@ public enum Constant {
 
     public enum App {
 
+        public static let appName = "FlickrApp"
         public static let photoCellIdentifier = "PhotoCell"
         public static let showDetailSegue = "showDetail"
         public static let initialSearchText = "dog"
         public static let perPageDefaultValue = 20
         public static let storedKeywordKey = "kStoredSearchjKeyword"
-        public static let isLogEnabled = true
+        public static let logLevel = LogLevel.debug
     }
     public enum FlickrService {
 
