@@ -1,0 +1,20 @@
+/* 
+  Localized.strings
+  FlickrApp
+
+  Created by Gabor Horvath on 2019. 10. 04..
+  Copyright © 2019. Gabor Horvath. All rights reserved.
+*/
+
+"mainScreenTitle" = "FlickrApp";
+"error" = "Hiba";
+"ok" = "Rendben";
+"unknownError" = "Ismeretlen hiba";
+"communicationError" = "Kommunikációs hiba";
+"generalError" = "Általános hiba";
+"responseError" = "Hibás kérés";
+"requestError" = "Hibás szerverválasz";
+"serviceUnavailable" = "A szolgáltatás átmenetileg nem elérhető";
+"photoNotFound" = "A fotó nem található";
+"unknownUserError" = "Ismeretlen felhasználó";
+"noPhoto" = "A lista üres";

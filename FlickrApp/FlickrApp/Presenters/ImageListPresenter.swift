@@ -10,26 +10,86 @@ import Foundation
 
 class ImageListPresenter {
     weak var view: ImageListViewProtocol?
+    private var photos = [FlickrPhoto]()
+    private var lastKeyword: String?
+    private var isLoading = false
+    private var isLastPageLoaded = false
     let photoSearchService = PhotosSearchService()
 
     init() {
         photoSearchService.delegate = self
     }
 
-    func startSearch(with keyword: String, page: Int = 1) {
-        let requestModel = PhotosSearch.RequestModel(text: keyword, page: page)
-        photoSearchService.search(requestModel: requestModel)
+    func startSearch(with keyword: String) {
+        guard !isLoading else { return }
+
+        photos = [FlickrPhoto]()
+        lastKeyword = keyword
+        isLastPageLoaded = false
+        AppDataService.shared.storeSearchKeyword(keyword)
+        view?.refresh()
+        fetchImageList(with: keyword)
+    }
+
+    func loadNextPage() {
+        guard !isLoading, !isLastPageLoaded else { return }
+
+        if let lastKeyword = lastKeyword {
+            fetchImageList(with: lastKeyword)
+        }
+    }
+
+    func numberOfPhotos() -> Int {
+        return photos.count
+    }
+
+    func photo(at index: Int) -> FlickrPhoto? {
+        if index < photos.count {
+            return photos[index]
+        }
+
+        return .none
+    }
+
+    func initialSearchText() -> String {
+        return AppDataService.shared.getStoredSearchKeyword()
     }
 }
 
+// MARK: - WebServiceDelegate
+
 extension ImageListPresenter : WebServiceDelegate {
     func serviceFinished(withResponse response: ResponseModelProtocol) {
+        isLoading = false
         guard let response = response as? PhotosSearch.ResponseModel else { return }
-
-        view?.update(with: response.photos ?? [])
+        if let photoList = response.photos, photoList.count > 0 {
+            photos.append(contentsOf: photoList)
+        } else {
+            isLastPageLoaded = true
+        }
+        view?.refresh()
     }
 
     func serviceFinished(withError error: Error) {
+        isLoading = false
         view?.update(with: error)
     }
+}
+
+// MARK: - ImageListPresenter
+
+private extension ImageListPresenter {
+    func fetchImageList(with keyword: String) {
+        guard keyword.count > 0 else { return }
+        isLoading = true
+        let page = Int(ceil(Double(photos.count)/Double(Constant.App.perPageDefaultValue)))
+        let requestModel = PhotosSearch.RequestModel(text: keyword, page: page+1)
+        photoSearchService.search(requestModel: requestModel)
+    }
+
+    func isLoading(_ loading: Bool) {
+        isLoading = loading
+        view?.isLoading(loading)
+    }
+
 }

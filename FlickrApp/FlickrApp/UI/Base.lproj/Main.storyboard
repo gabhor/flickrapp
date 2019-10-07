@@ -32,20 +32,65 @@
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="IU2-r1-WY8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="650"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sti-mB-383" customClass="UrlImageView" customModule="FlickrApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Sti-mB-383" secondAttribute="trailing" id="43V-qI-J9j"/>
+                                    <constraint firstItem="Sti-mB-383" firstAttribute="leading" secondItem="IU2-r1-WY8" secondAttribute="leading" id="6WK-RA-Vw9"/>
+                                    <constraint firstItem="Sti-mB-383" firstAttribute="top" secondItem="IU2-r1-WY8" secondAttribute="top" id="AJZ-vx-b2X"/>
+                                    <constraint firstItem="Sti-mB-383" firstAttribute="width" secondItem="IU2-r1-WY8" secondAttribute="width" id="Wkn-M3-Qbh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sti-mB-383" secondAttribute="bottom" id="Zuc-ul-6cj"/>
+                                    <constraint firstItem="Sti-mB-383" firstAttribute="height" secondItem="IU2-r1-WY8" secondAttribute="height" id="gNk-77-g2p"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="Kht-84-pgX"/>
+                                </connections>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvZ-iB-Ulg">
+                                <rect key="frame" x="16" y="746" width="382" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="zMK-dZ-Aq6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IU2-r1-WY8" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="0Bl-XK-sm5"/>
+                            <constraint firstItem="TvZ-iB-Ulg" firstAttribute="top" secondItem="IU2-r1-WY8" secondAttribute="bottom" constant="8" id="2Xr-Df-H8K"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="TvZ-iB-Ulg" secondAttribute="trailing" constant="16" id="ALh-dS-F1Q"/>
+                            <constraint firstItem="IU2-r1-WY8" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" id="Vph-v8-2Lw"/>
+                            <constraint firstItem="TvZ-iB-Ulg" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="16" id="fRs-N6-kIk"/>
+                            <constraint firstItem="IU2-r1-WY8" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="mmz-IN-o5H"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="TvZ-iB-Ulg" secondAttribute="bottom" constant="16" id="qqq-Zo-D5U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="detailsLabel" destination="TvZ-iB-Ulg" id="dGQ-IP-MQc"/>
+                        <outlet property="imageView" destination="Sti-mB-383" id="Q1Q-Gc-TxZ"/>
+                        <outlet property="scrollView" destination="IU2-r1-WY8" id="JAH-Dd-ITi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708.69565217391312" y="128.57142857142856"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController id="H1p-Uh-vWS" customClass="SplitViewController" customModule="FlickrApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -73,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
-        <!--Image List View Controller-->
+        <!--FlickrApp-->
         <scene sceneID="nH1-Jx-Fz1">
             <objects>
                 <viewController id="05e-VF-ejb" customClass="ImageListViewController" customModule="FlickrApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,6 +126,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO PHOTO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZt-cq-zDr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UcF-yN-TSp">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
@@ -108,26 +159,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hP7-q0-1ZL">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-Vt-hW8" customClass="UrlImageView" customModule="FlickrApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                </imageView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="hP7-q0-1ZL" secondAttribute="trailing" id="IGV-uL-vDa"/>
-                                                <constraint firstItem="hP7-q0-1ZL" firstAttribute="leading" secondItem="6fw-5d-xLK" secondAttribute="leading" id="R4h-x5-kpf"/>
-                                                <constraint firstAttribute="bottom" secondItem="hP7-q0-1ZL" secondAttribute="bottom" id="dkc-Ly-8eL"/>
-                                                <constraint firstItem="hP7-q0-1ZL" firstAttribute="top" secondItem="6fw-5d-xLK" secondAttribute="top" id="llJ-WJ-TiC"/>
+                                                <constraint firstAttribute="trailing" secondItem="b4x-Vt-hW8" secondAttribute="trailing" id="SA7-ta-4yg"/>
+                                                <constraint firstItem="b4x-Vt-hW8" firstAttribute="top" secondItem="6fw-5d-xLK" secondAttribute="top" id="fhX-LD-GQG"/>
+                                                <constraint firstAttribute="bottom" secondItem="b4x-Vt-hW8" secondAttribute="bottom" id="kV8-Zk-e8a"/>
+                                                <constraint firstItem="b4x-Vt-hW8" firstAttribute="leading" secondItem="6fw-5d-xLK" secondAttribute="leading" id="qBA-Oz-Xze"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="100"/>
                                         <connections>
-                                            <outlet property="imageView" destination="hP7-q0-1ZL" id="GwU-LL-x15"/>
+                                            <outlet property="imageView" destination="b4x-Vt-hW8" id="5t7-Ve-9Ik"/>
                                             <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="ZD0-IM-WdB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="05e-VF-ejb" id="pcX-Mu-6bM"/>
+                                    <outlet property="delegate" destination="05e-VF-ejb" id="Sqd-tx-02D"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -136,16 +189,21 @@
                             <constraint firstItem="UcF-yN-TSp" firstAttribute="leading" secondItem="Eaw-81-l9r" secondAttribute="leading" id="AkE-b8-RJT"/>
                             <constraint firstItem="fet-QM-pcU" firstAttribute="top" secondItem="UcF-yN-TSp" secondAttribute="bottom" constant="16" id="Jmo-ZG-RzB"/>
                             <constraint firstItem="fet-QM-pcU" firstAttribute="bottom" secondItem="Eaw-81-l9r" secondAttribute="bottom" id="PpY-xW-Jr4"/>
+                            <constraint firstAttribute="bottom" secondItem="xZt-cq-zDr" secondAttribute="bottom" id="QoZ-we-dc6"/>
+                            <constraint firstItem="xZt-cq-zDr" firstAttribute="leading" secondItem="Eaw-81-l9r" secondAttribute="leading" id="SHX-Sz-SKq"/>
                             <constraint firstItem="Eaw-81-l9r" firstAttribute="trailing" secondItem="fet-QM-pcU" secondAttribute="trailing" constant="16" id="lTN-SF-H0h"/>
+                            <constraint firstItem="xZt-cq-zDr" firstAttribute="top" secondItem="7S2-bu-igf" secondAttribute="top" id="lej-25-9cE"/>
+                            <constraint firstItem="xZt-cq-zDr" firstAttribute="trailing" secondItem="Eaw-81-l9r" secondAttribute="trailing" id="oUY-fE-qxF"/>
                             <constraint firstItem="UcF-yN-TSp" firstAttribute="trailing" secondItem="Eaw-81-l9r" secondAttribute="trailing" id="pWq-Gt-olr"/>
                             <constraint firstItem="fet-QM-pcU" firstAttribute="leading" secondItem="Eaw-81-l9r" secondAttribute="leading" constant="16" id="xTr-LB-J11"/>
                             <constraint firstItem="UcF-yN-TSp" firstAttribute="top" secondItem="Eaw-81-l9r" secondAttribute="top" id="zYe-hD-600"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Eaw-81-l9r"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MU1-ut-afK"/>
+                    <navigationItem key="navigationItem" title="FlickrApp" id="MU1-ut-afK"/>
                     <connections>
                         <outlet property="collectionView" destination="fet-QM-pcU" id="roP-LH-kgw"/>
+                        <outlet property="noPhotoLabel" destination="xZt-cq-zDr" id="sZe-db-bgF"/>
                         <outlet property="searchBar" destination="UcF-yN-TSp" id="e2G-O4-gFd"/>
                     </connections>
                 </viewController>

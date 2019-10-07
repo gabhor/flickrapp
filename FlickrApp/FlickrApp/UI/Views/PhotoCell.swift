@@ -9,12 +9,12 @@
 import UIKit
 
 class PhotoCell : UICollectionViewCell {
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UrlImageView!
 
     func displayPhoto(_ photoData: FlickrPhoto) {
-        imageView.image = .none
+        imageView.showPlaceholder()
         if let url = photoData.thumbnailUrl() {
-            imageView.load(url: url)
+            imageView.load(urlString: url, cacheEnabled: true)
         }
     }
 }

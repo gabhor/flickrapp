@@ -10,7 +10,7 @@ import Foundation
 
 class PhotosSearchService : WebService {
     func search(requestModel: PhotosSearch.RequestModel) {
-        let photosSearchDeserializer = PhotosSearchDeserializer()
-        processRequest(requestModel: requestModel, deserializer: photosSearchDeserializer)
+        let deserializer = PhotosSearchDeserializer()
+        processRequest(requestModel: requestModel, deserializer: deserializer)
     }
 }

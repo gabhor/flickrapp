@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UrlImageView" customModule="FlickrApp" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicatorBackgroundView" destination="lhP-Ne-hWF" id="CK6-YO-be4"/>
+                <outlet property="activityIndicatorView" destination="b15-RA-Mqe" id="ADd-Ej-6h2"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="b1J-Ss-8Zb"/>
+                <outlet property="imageView" destination="Wge-dL-xrU" id="pbg-pr-gpY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-dL-xrU">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhP-Ne-hWF">
+                    <rect key="frame" x="125" y="125" width="50" height="50"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="b15-RA-Mqe">
+                            <rect key="frame" x="16.5" y="16.5" width="17" height="17"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="b15-RA-Mqe" secondAttribute="height" multiplier="1:1" id="1ix-9Y-ytt"/>
+                            </constraints>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="HOH-Z9-Z2g"/>
+                        <constraint firstItem="b15-RA-Mqe" firstAttribute="height" secondItem="lhP-Ne-hWF" secondAttribute="height" multiplier="1:3" id="SGH-5E-QM2"/>
+                        <constraint firstItem="b15-RA-Mqe" firstAttribute="centerX" secondItem="lhP-Ne-hWF" secondAttribute="centerX" id="T1s-pv-1WF"/>
+                        <constraint firstAttribute="width" secondItem="lhP-Ne-hWF" secondAttribute="height" multiplier="1:1" id="eMb-nD-zRy"/>
+                        <constraint firstItem="b15-RA-Mqe" firstAttribute="centerY" secondItem="lhP-Ne-hWF" secondAttribute="centerY" id="h9t-o7-bYa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wge-dL-xrU" secondAttribute="trailing" id="3zt-Dv-Po4"/>
+                <constraint firstItem="Wge-dL-xrU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="71U-Wv-oQQ"/>
+                <constraint firstItem="lhP-Ne-hWF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FIw-mZ-6rz"/>
+                <constraint firstAttribute="bottom" secondItem="Wge-dL-xrU" secondAttribute="bottom" id="fS0-Xi-2gF"/>
+                <constraint firstItem="lhP-Ne-hWF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1:2" priority="750" id="m3o-zi-nmL"/>
+                <constraint firstItem="lhP-Ne-hWF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qfb-6l-YV2"/>
+                <constraint firstItem="Wge-dL-xrU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sAp-98-XUl"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="78" y="56"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholderImage" width="1200" height="900"/>
+    </resources>
+</document>

@@ -1,5 +1,5 @@
 //
-//  ImageListViewProtocol.swift
+//  ImageDetailsViewProtocol.swift
 //  FlickrApp
 //
 //  Created by Gabor Horvath on 2019. 10. 03..
@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol ImageListViewProtocol : class {
-    func isLoading(_ loading: Bool)
-    func refresh()
+protocol ImageDetailsViewProtocol : class {
+    func update(with photo:FlickrPhotoDetails)
     func update(with error:Error)
 }
+

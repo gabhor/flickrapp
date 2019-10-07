@@ -16,25 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlickrApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rns-Ez-ooi">
-                                <rect key="frame" x="136" y="429" width="142.5" height="38.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horváth Gábor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-K2-M0b">
-                                <rect key="frame" x="150.5" y="503.5" width="113" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1024" translatesAutoresizingMaskIntoConstraints="NO" id="qVJ-6D-OXr">
+                                <rect key="frame" x="70.5" y="311.5" width="273" height="273"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qVJ-6D-OXr" secondAttribute="height" multiplier="1:1" id="9OF-Kd-B3g"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xcb-K2-M0b" firstAttribute="top" secondItem="rns-Ez-ooi" secondAttribute="bottom" constant="36" id="fy1-2w-bXK"/>
-                            <constraint firstItem="xcb-K2-M0b" firstAttribute="centerX" secondItem="rns-Ez-ooi" secondAttribute="centerX" id="mMA-Iy-gPt"/>
-                            <constraint firstItem="rns-Ez-ooi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n5h-Ei-4e4"/>
-                            <constraint firstItem="rns-Ez-ooi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tOD-PW-8fU"/>
+                            <constraint firstItem="qVJ-6D-OXr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Mns-hS-pEY"/>
+                            <constraint firstItem="qVJ-6D-OXr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PNS-Da-vDg"/>
+                            <constraint firstItem="qVJ-6D-OXr" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.66" id="nQe-3O-O8b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,4 +37,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon1024" width="1024" height="1024"/>
+    </resources>
 </document>

@@ -1,0 +1,20 @@
+/* 
+  Localized.strings
+  FlickrApp
+
+  Created by Gabor Horvath on 2019. 10. 04..
+  Copyright © 2019. Gabor Horvath. All rights reserved.
+*/
+
+"mainScreenTitle" = "FlickrApp";
+"error" = "Error";
+"ok" = "Ok";
+"unknownError" = "Unknown error";
+"communicationError" = "Communication error";
+"generalError" = "General error";
+"responseError" = "Invalid request";
+"requestError" = "Invalid response";
+"serviceUnavailable" = "Service currently unavailable";
+"photoNotFound" = "Photo not found";
+"unknownUserError" = "Unknown user";
+"noPhoto" = "Empty list";
