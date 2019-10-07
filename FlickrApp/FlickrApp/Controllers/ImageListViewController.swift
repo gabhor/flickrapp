@@ -15,6 +15,7 @@ class ImageListViewController: UIViewController {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var noPhotoLabel: UILabel!
 
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
@@ -25,6 +26,7 @@ class ImageListViewController: UIViewController {
         presenter.view = self
         initUserInterface()
         startSearch()
+        updateThumbnails()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -108,12 +110,14 @@ extension ImageListViewController : ImageListViewProtocol {
     }
 
     func refresh() {
-        updateThumbnails()
+        DispatchQueue.main.async {
+            self.updateThumbnails()
+        }
     }
 
     func update(with error: Error) {
-        updateThumbnails()
         DispatchQueue.main.async {
+            self.updateThumbnails()
             UIAlertController.showErrorDetails(error: error)
         }
     }
@@ -123,13 +127,20 @@ extension ImageListViewController : ImageListViewProtocol {
 
 private extension ImageListViewController {
     func initUserInterface() {
-        title = "mainScreenTitle".localized
         initSplitView()
         initSearchBar()
         initAppearance()
+        initTexts()
+    }
+
+    func initTexts() {
+        title = "mainScreenTitle".localized
+        noPhotoLabel.text = "noPhoto".localized
     }
 
     func initAppearance() {
+        noPhotoLabel.font = UIFont.bigBoldFont
+        noPhotoLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         collectionView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         searchBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -156,8 +167,13 @@ private extension ImageListViewController {
     }
 
     func updateThumbnails() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+        if presenter.numberOfPhotos() > 0 {
+            noPhotoLabel.isHidden = true
+            collectionView.isHidden = false
+        } else {
+            noPhotoLabel.isHidden = false
+            collectionView.isHidden = true
         }
+        collectionView.reloadData()
     }
 }

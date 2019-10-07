@@ -126,6 +126,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO PHOTO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZt-cq-zDr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UcF-yN-TSp">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
@@ -183,7 +189,11 @@
                             <constraint firstItem="UcF-yN-TSp" firstAttribute="leading" secondItem="Eaw-81-l9r" secondAttribute="leading" id="AkE-b8-RJT"/>
                             <constraint firstItem="fet-QM-pcU" firstAttribute="top" secondItem="UcF-yN-TSp" secondAttribute="bottom" constant="16" id="Jmo-ZG-RzB"/>
                             <constraint firstItem="fet-QM-pcU" firstAttribute="bottom" secondItem="Eaw-81-l9r" secondAttribute="bottom" id="PpY-xW-Jr4"/>
+                            <constraint firstAttribute="bottom" secondItem="xZt-cq-zDr" secondAttribute="bottom" id="QoZ-we-dc6"/>
+                            <constraint firstItem="xZt-cq-zDr" firstAttribute="leading" secondItem="Eaw-81-l9r" secondAttribute="leading" id="SHX-Sz-SKq"/>
                             <constraint firstItem="Eaw-81-l9r" firstAttribute="trailing" secondItem="fet-QM-pcU" secondAttribute="trailing" constant="16" id="lTN-SF-H0h"/>
+                            <constraint firstItem="xZt-cq-zDr" firstAttribute="top" secondItem="7S2-bu-igf" secondAttribute="top" id="lej-25-9cE"/>
+                            <constraint firstItem="xZt-cq-zDr" firstAttribute="trailing" secondItem="Eaw-81-l9r" secondAttribute="trailing" id="oUY-fE-qxF"/>
                             <constraint firstItem="UcF-yN-TSp" firstAttribute="trailing" secondItem="Eaw-81-l9r" secondAttribute="trailing" id="pWq-Gt-olr"/>
                             <constraint firstItem="fet-QM-pcU" firstAttribute="leading" secondItem="Eaw-81-l9r" secondAttribute="leading" constant="16" id="xTr-LB-J11"/>
                             <constraint firstItem="UcF-yN-TSp" firstAttribute="top" secondItem="Eaw-81-l9r" secondAttribute="top" id="zYe-hD-600"/>
@@ -193,6 +203,7 @@
                     <navigationItem key="navigationItem" title="FlickrApp" id="MU1-ut-afK"/>
                     <connections>
                         <outlet property="collectionView" destination="fet-QM-pcU" id="roP-LH-kgw"/>
+                        <outlet property="noPhotoLabel" destination="xZt-cq-zDr" id="sZe-db-bgF"/>
                         <outlet property="searchBar" destination="UcF-yN-TSp" id="e2G-O4-gFd"/>
                     </connections>
                 </viewController>

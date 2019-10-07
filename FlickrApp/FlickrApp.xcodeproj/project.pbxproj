@@ -25,6 +25,7 @@
 		848D93C3234787F60064C06F /* AppDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D93C2234787F60064C06F /* AppDataService.swift */; };
 		849470E1234B94EE00FE2BB5 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849470E0234B94EE00FE2BB5 /* UIAlertControllerExtension.swift */; };
 		849470E3234B967500FE2BB5 /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849470E2234B967500FE2BB5 /* ErrorExtension.swift */; };
+		849470E5234BCBE400FE2BB5 /* Exo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 849470E4234BCBBB00FE2BB5 /* Exo-Bold.ttf */; };
 		84A5B2FB234A4CE4002624F0 /* ThumbnailCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FA234A4CE4002624F0 /* ThumbnailCacheService.swift */; };
 		84A5B2FE234A545E002624F0 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FD234A545E002624F0 /* LogService.swift */; };
 		84A5B300234A5470002624F0 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FF234A5470002624F0 /* LogLevel.swift */; };
@@ -91,6 +92,7 @@
 		848D93C2234787F60064C06F /* AppDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataService.swift; sourceTree = "<group>"; };
 		849470E0234B94EE00FE2BB5 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		849470E2234B967500FE2BB5 /* ErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtension.swift; sourceTree = "<group>"; };
+		849470E4234BCBBB00FE2BB5 /* Exo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Bold.ttf"; sourceTree = "<group>"; };
 		84A5B2FA234A4CE4002624F0 /* ThumbnailCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheService.swift; sourceTree = "<group>"; };
 		84A5B2FD234A545E002624F0 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		84A5B2FF234A5470002624F0 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				84C403DE2347A01E009D350B /* Amperzand.ttf */,
 				84C403D723479E84009D350B /* Exo-ExtraLight.ttf */,
+				849470E4234BCBBB00FE2BB5 /* Exo-Bold.ttf */,
 				84C403D423479E3E009D350B /* Exo-Light.ttf */,
 				84178D832346B1BB00F54389 /* Localizable.strings */,
 			);
@@ -473,6 +476,7 @@
 				84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */,
 				84178D812346B1BB00F54389 /* Localizable.strings in Resources */,
 				84A7F2E0234B1BE0001ADBDE /* UrlImageView.xib in Resources */,
+				849470E5234BCBE400FE2BB5 /* Exo-Bold.ttf in Resources */,
 				84E32D2C2343EBD70079DE07 /* LaunchScreen.storyboard in Resources */,
 				84E32D292343EBD70079DE07 /* Assets.xcassets in Resources */,
 				84C403D523479E41009D350B /* Exo-Light.ttf in Resources */,

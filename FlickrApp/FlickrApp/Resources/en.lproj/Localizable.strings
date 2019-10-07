@@ -17,3 +17,4 @@
 "serviceUnavailable" = "Service currently unavailable";
 "photoNotFound" = "Photo not found";
 "unknownUserError" = "Unknown user";
+"noPhoto" = "Empty list";

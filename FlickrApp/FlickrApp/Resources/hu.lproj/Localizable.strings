@@ -17,3 +17,4 @@
 "serviceUnavailable" = "A szolgáltatás átmenetileg nem elérhető";
 "photoNotFound" = "A fotó nem található";
 "unknownUserError" = "Ismeretlen felhasználó";
+"noPhoto" = "A lista üres";

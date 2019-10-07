@@ -14,6 +14,10 @@ extension UIFont {
         return UIFont(name: "Amperzand", size: 28.0) ?? UIFont.systemFont(ofSize: 28.0)
     }
 
+    static var bigBoldFont: UIFont {
+        return UIFont(name: "Exo-Bold", size: 26.0) ?? UIFont.systemFont(ofSize: 26.0)
+    }
+
     static var lightFont: UIFont {
         return UIFont(name: "Exo-Light", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
     }

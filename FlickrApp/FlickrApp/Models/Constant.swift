@@ -57,7 +57,7 @@ public enum Constant {
         public static let text = "text"
         public static let perPage = "per_page"
         public static let page = "page"
-        public static let photoId = "photo_ids"
+        public static let photoId = "photo_id"
         public static let secret = "secret"
         public static let media = "media"
     }
