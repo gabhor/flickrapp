@@ -68,11 +68,11 @@ private extension ImageDetailsViewController {
     }
 
     @objc func doubleTap(recognizer: UITapGestureRecognizer) {
-        if scrollView.zoomScale<scrollView.maximumZoomScale {
+        if scrollView.zoomScale>scrollView.minimumZoomScale {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        } else {
             let rect = getRectForZoom(with: recognizer.location(in: recognizer.view))
             scrollView.zoom(to: rect, animated: true)
-        } else {
-            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
         }
     }
 
@@ -98,10 +98,9 @@ private extension ImageDetailsViewController {
 
     func updatePhoto() {
         DispatchQueue.main.async {
+            self.imageView.image = #imageLiteral(resourceName: "placeholderImage")
             if let thumbnailUrl = self.detailItem?.thumbnailUrl(), let photoPreview = ThumbnailCacheService.shared.getImage(for: thumbnailUrl) {
                 self.imageView.image = UIImage(data: photoPreview)
-            } else {
-                self.imageView.image = #imageLiteral(resourceName: "placeholderImage")
             }
 
             if let url = self.photoDetails?.originalImageUrl() {

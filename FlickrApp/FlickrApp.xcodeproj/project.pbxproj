@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84032349234A62450053B30D /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84032348234A62450053B30D /* UrlImageView.swift */; };
 		84178D0A2346047000F54389 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D092346047000F54389 /* PhotoCell.swift */; };
 		84178D0E2346209500F54389 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D0D2346209500F54389 /* UIImageViewExtension.swift */; };
 		84178D5223462B7400F54389 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D5123462B7400F54389 /* ImageListPresenter.swift */; };
@@ -69,7 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84032348234A62450053B30D /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		84178D092346047000F54389 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		84178D0D2346209500F54389 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		84178D5123462B7400F54389 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				84178D092346047000F54389 /* PhotoCell.swift */,
-				84032348234A62450053B30D /* UrlImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				84E32D202343EBD70079DE07 /* AppDelegate.swift in Sources */,
 				84178D642346510100F54389 /* PhotosGetInfoDeserializer.swift in Sources */,
 				84A5B300234A5470002624F0 /* LogLevel.swift in Sources */,
-				84032349234A62450053B30D /* UrlImageView.swift in Sources */,
 				84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
