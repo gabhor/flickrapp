@@ -11,7 +11,7 @@ import Foundation
 class PhotosSearchDeserializer: ResponseDeserializerProtocol {
     func responseModel(fromJsonData jsonData: AnyObject) -> ResponseModelProtocol {
         guard let jsonDict = jsonData as? [String: Any], let stat = jsonData[Constant.ResponseParameter.stat] as? String else {
-            return PhotosSearch.ResponseModel(stat: Constant.ResponseParameter.stat, message: .none, code: Constant.Error.generalError, photos: .none)
+            return PhotosSearch.ResponseModel(stat: Constant.ResponseParameter.stat, message: .none, code: Constant.Error.Code.jsonStructError, photos: .none)
         }
 
         let photosNode = jsonDict[Constant.ResponseParameter.photos]

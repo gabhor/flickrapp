@@ -23,6 +23,8 @@
 		842CDA512345B90900D2C027 /* PhotosSearchDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */; };
 		8468BE022345C71C008E9F01 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468BE012345C71C008E9F01 /* FlickrPhoto.swift */; };
 		848D93C3234787F60064C06F /* AppDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D93C2234787F60064C06F /* AppDataService.swift */; };
+		849470E1234B94EE00FE2BB5 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849470E0234B94EE00FE2BB5 /* UIAlertControllerExtension.swift */; };
+		849470E3234B967500FE2BB5 /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849470E2234B967500FE2BB5 /* ErrorExtension.swift */; };
 		84A5B2FB234A4CE4002624F0 /* ThumbnailCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FA234A4CE4002624F0 /* ThumbnailCacheService.swift */; };
 		84A5B2FE234A545E002624F0 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FD234A545E002624F0 /* LogService.swift */; };
 		84A5B300234A5470002624F0 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FF234A5470002624F0 /* LogLevel.swift */; };
@@ -87,6 +89,8 @@
 		842CDA502345B90900D2C027 /* PhotosSearchDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchDeserializer.swift; sourceTree = "<group>"; };
 		8468BE012345C71C008E9F01 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
 		848D93C2234787F60064C06F /* AppDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataService.swift; sourceTree = "<group>"; };
+		849470E0234B94EE00FE2BB5 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		849470E2234B967500FE2BB5 /* ErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtension.swift; sourceTree = "<group>"; };
 		84A5B2FA234A4CE4002624F0 /* ThumbnailCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheService.swift; sourceTree = "<group>"; };
 		84A5B2FD234A545E002624F0 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		84A5B2FF234A5470002624F0 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				84178D5D23464E0900F54389 /* DictionaryExtension.swift */,
 				84178D842346B1F700F54389 /* StringExtension.swift */,
 				84C403E02347A198009D350B /* UIFontExtension.swift */,
+				849470E0234B94EE00FE2BB5 /* UIAlertControllerExtension.swift */,
+				849470E2234B967500FE2BB5 /* ErrorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -500,11 +506,13 @@
 				84CCF7F92344946200C7AEA6 /* WebService.swift in Sources */,
 				84CCF7EA234481F800C7AEA6 /* Constant.swift in Sources */,
 				84CCF8002345301A00C7AEA6 /* ResponseModelProtocol.swift in Sources */,
+				849470E1234B94EE00FE2BB5 /* UIAlertControllerExtension.swift in Sources */,
 				84E32D242343EBD70079DE07 /* ImageDetailsViewController.swift in Sources */,
 				84178D5C23464C9700F54389 /* PhotosGetInfo.swift in Sources */,
 				84178D62234650AE00F54389 /* PhotosGetInfoService.swift in Sources */,
 				84178D852346B1F700F54389 /* StringExtension.swift in Sources */,
 				84178D602346503000F54389 /* FlickrPhotoDetails.swift in Sources */,
+				849470E3234B967500FE2BB5 /* ErrorExtension.swift in Sources */,
 				84A5B2FE234A545E002624F0 /* LogService.swift in Sources */,
 				84C403E72347D2A9009D350B /* SplitViewController.swift in Sources */,
 				84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */,

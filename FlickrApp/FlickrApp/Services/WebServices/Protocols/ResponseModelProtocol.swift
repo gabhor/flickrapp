@@ -12,4 +12,5 @@ protocol ResponseModelProtocol {
     var stat: String { get }
     var message: String? { get }
     var code: Int? { get }
+    var error: NSError? { get }
 }

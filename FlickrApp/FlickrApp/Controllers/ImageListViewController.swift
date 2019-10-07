@@ -113,6 +113,9 @@ extension ImageListViewController : ImageListViewProtocol {
 
     func update(with error: Error) {
         updateThumbnails()
+        DispatchQueue.main.async {
+            UIAlertController.showErrorDetails(error: error)
+        }
     }
 }
 
@@ -123,7 +126,6 @@ private extension ImageListViewController {
         title = "mainScreenTitle".localized
         initSplitView()
         initSearchBar()
-        initCollectionView()
         initAppearance()
     }
 
@@ -142,10 +144,6 @@ private extension ImageListViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ImageDetailsViewController
         }
-    }
-
-    func initCollectionView() {
-        
     }
 
     func initSearchBar() {

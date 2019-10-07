@@ -7,4 +7,13 @@
 */
 
 "mainScreenTitle" = "FlickrApp";
-
+"error" = "Hiba";
+"ok" = "Rendben";
+"unknownError" = "Ismeretlen hiba";
+"communicationError" = "Kommunikációs hiba";
+"generalError" = "Általános hiba";
+"responseError" = "Hibás kérés";
+"requestError" = "Hibás szerverválasz";
+"serviceUnavailable" = "A szolgáltatás átmenetileg nem elérhető";
+"photoNotFound" = "A fotó nem található";
+"unknownUserError" = "Ismeretlen felhasználó";

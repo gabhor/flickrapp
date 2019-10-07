@@ -51,7 +51,15 @@ struct PhotosSearch {
         let message: String?
         let code: Int?
         let photos: [FlickrPhoto]?
-
-        
+        var error: NSError? {
+            if let code = code {
+                var userInfo = [String: String]()
+                if let message = message {
+                    userInfo[Constant.Error.serviceMessageKey] = message
+                }
+                return NSError(domain: Constant.Error.Domain.photosSearchService, code: code, userInfo: userInfo)
+            }
+            return .none
+        }
     }
 }

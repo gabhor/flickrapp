@@ -7,4 +7,13 @@
 */
 
 "mainScreenTitle" = "FlickrApp";
-
+"error" = "Error";
+"ok" = "Ok";
+"unknownError" = "Unknown error";
+"communicationError" = "Communication error";
+"generalError" = "General error";
+"responseError" = "Invalid request";
+"requestError" = "Invalid response";
+"serviceUnavailable" = "Service currently unavailable";
+"photoNotFound" = "Photo not found";
+"unknownUserError" = "Unknown user";

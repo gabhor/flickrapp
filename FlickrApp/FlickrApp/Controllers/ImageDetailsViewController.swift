@@ -42,7 +42,9 @@ extension ImageDetailsViewController: ImageDetailsViewProtocol {
     }
 
     func update(with error: Error) {
-        //TODO: Error handling
+        DispatchQueue.main.async {
+            UIAlertController.showErrorDetails(error: error)
+        }
     }
 }
 

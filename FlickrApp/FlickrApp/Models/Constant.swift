@@ -57,7 +57,7 @@ public enum Constant {
         public static let text = "text"
         public static let perPage = "per_page"
         public static let page = "page"
-        public static let photoId = "photo_id"
+        public static let photoId = "photo_ids"
         public static let secret = "secret"
         public static let media = "media"
     }
@@ -94,11 +94,25 @@ public enum Constant {
 
     public enum Error {
 
-        public static let appErrorDomaion = "FlickrAppErrorDomain"
-        public static let communicationError = -1009
-        public static let generalError = -1
-        public static let jsonParseError = -2
+        public enum Domain {
 
+            public static let app = "AppErrorDomain"
+            public static let communication = "CommunicationErrorDomain"
+            public static let photosSearchService = "PhotosSearchServiceErrorDomain"
+            public static let photosGetInfoService = "PhotosGetInfoServiceErrorDomain"
+        }
+
+        public enum Code {
+
+            public static let communicationError = -1009
+            public static let generalError = -1
+            public static let jsonParseError = -2
+            public static let jsonStructError = -3
+            public static let emptyResponseError = -4
+        }
+
+        public static let serviceMessageKey = "serviceMessage"
+        public static let serviceGeneralErrorTreshold = 100
     }
 
 

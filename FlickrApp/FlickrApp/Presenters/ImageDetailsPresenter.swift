@@ -32,7 +32,8 @@ extension ImageDetailsPresenter : WebServiceDelegate {
         if let photoDetails = response.photoDetails {
             view?.update(with: photoDetails)
         } else {
-            //TODO: handle empty content
+            let error = NSError(domain: Constant.Error.Domain.app, code: Constant.Error.Code.emptyResponseError, userInfo: .none)
+            view?.update(with: error)
         }
     }
 
