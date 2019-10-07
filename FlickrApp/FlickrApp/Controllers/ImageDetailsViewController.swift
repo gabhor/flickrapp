@@ -15,7 +15,7 @@ class ImageDetailsViewController: UIViewController {
     var photoDetails: FlickrPhotoDetails?
 
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UrlImageView!
     @IBOutlet private weak var detailsLabel: UILabel!
 
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -59,6 +59,7 @@ private extension ImageDetailsViewController {
         detailsLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         initGestureRecognizer()
         detailsLabel.font = UIFont.extraLightFont
+        updateUI()
     }
 
     func initGestureRecognizer() {

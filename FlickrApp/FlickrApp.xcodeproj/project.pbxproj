@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		84178D0A2346047000F54389 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D092346047000F54389 /* PhotoCell.swift */; };
-		84178D0E2346209500F54389 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D0D2346209500F54389 /* UIImageViewExtension.swift */; };
 		84178D5223462B7400F54389 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D5123462B7400F54389 /* ImageListPresenter.swift */; };
 		84178D572346311400F54389 /* ImageListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D562346311400F54389 /* ImageListViewProtocol.swift */; };
 		84178D5C23464C9700F54389 /* PhotosGetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84178D5B23464C9700F54389 /* PhotosGetInfo.swift */; };
@@ -27,6 +26,8 @@
 		84A5B2FB234A4CE4002624F0 /* ThumbnailCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FA234A4CE4002624F0 /* ThumbnailCacheService.swift */; };
 		84A5B2FE234A545E002624F0 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FD234A545E002624F0 /* LogService.swift */; };
 		84A5B300234A5470002624F0 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5B2FF234A5470002624F0 /* LogLevel.swift */; };
+		84A7F2E0234B1BE0001ADBDE /* UrlImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7F2DF234B1BE0001ADBDE /* UrlImageView.xib */; };
+		84A7F2E2234B1D73001ADBDE /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7F2E1234B1D73001ADBDE /* UrlImageView.swift */; };
 		84C403D523479E41009D350B /* Exo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D423479E3E009D350B /* Exo-Light.ttf */; };
 		84C403D823479E94009D350B /* Exo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403D723479E84009D350B /* Exo-ExtraLight.ttf */; };
 		84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C403DE2347A01E009D350B /* Amperzand.ttf */; };
@@ -69,7 +70,6 @@
 
 /* Begin PBXFileReference section */
 		84178D092346047000F54389 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		84178D0D2346209500F54389 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		84178D5123462B7400F54389 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
 		84178D562346311400F54389 /* ImageListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewProtocol.swift; sourceTree = "<group>"; };
 		84178D5B23464C9700F54389 /* PhotosGetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGetInfo.swift; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		84A5B2FA234A4CE4002624F0 /* ThumbnailCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheService.swift; sourceTree = "<group>"; };
 		84A5B2FD234A545E002624F0 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		84A5B2FF234A5470002624F0 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		84A7F2DF234B1BE0001ADBDE /* UrlImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrlImageView.xib; sourceTree = "<group>"; };
+		84A7F2E1234B1D73001ADBDE /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		84C403D423479E3E009D350B /* Exo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Light.ttf"; sourceTree = "<group>"; };
 		84C403D723479E84009D350B /* Exo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		84C403DE2347A01E009D350B /* Amperzand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amperzand.ttf; sourceTree = "<group>"; };
@@ -148,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				84178D092346047000F54389 /* PhotoCell.swift */,
+				84A7F2DF234B1BE0001ADBDE /* UrlImageView.xib */,
+				84A7F2E1234B1D73001ADBDE /* UrlImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,7 +159,6 @@
 		84178D0C2346208200F54389 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				84178D0D2346209500F54389 /* UIImageViewExtension.swift */,
 				84178D5D23464E0900F54389 /* DictionaryExtension.swift */,
 				84178D842346B1F700F54389 /* StringExtension.swift */,
 				84C403E02347A198009D350B /* UIFontExtension.swift */,
@@ -463,6 +466,7 @@
 			files = (
 				84C403DF2347A01E009D350B /* Amperzand.ttf in Resources */,
 				84178D812346B1BB00F54389 /* Localizable.strings in Resources */,
+				84A7F2E0234B1BE0001ADBDE /* UrlImageView.xib in Resources */,
 				84E32D2C2343EBD70079DE07 /* LaunchScreen.storyboard in Resources */,
 				84E32D292343EBD70079DE07 /* Assets.xcassets in Resources */,
 				84C403D523479E41009D350B /* Exo-Light.ttf in Resources */,
@@ -501,7 +505,6 @@
 				84178D62234650AE00F54389 /* PhotosGetInfoService.swift in Sources */,
 				84178D852346B1F700F54389 /* StringExtension.swift in Sources */,
 				84178D602346503000F54389 /* FlickrPhotoDetails.swift in Sources */,
-				84178D0E2346209500F54389 /* UIImageViewExtension.swift in Sources */,
 				84A5B2FE234A545E002624F0 /* LogService.swift in Sources */,
 				84C403E72347D2A9009D350B /* SplitViewController.swift in Sources */,
 				84CCF7F1234489C200C7AEA6 /* RequestModelProtocol.swift in Sources */,
@@ -522,6 +525,7 @@
 				84E32D202343EBD70079DE07 /* AppDelegate.swift in Sources */,
 				84178D642346510100F54389 /* PhotosGetInfoDeserializer.swift in Sources */,
 				84A5B300234A5470002624F0 /* LogLevel.swift in Sources */,
+				84A7F2E2234B1D73001ADBDE /* UrlImageView.swift in Sources */,
 				84CCF7F0234489C200C7AEA6 /* ResponseDeserializerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
