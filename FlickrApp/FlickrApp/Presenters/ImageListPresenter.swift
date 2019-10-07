@@ -56,6 +56,8 @@ class ImageListPresenter {
     }
 }
 
+// MARK: - WebServiceDelegate
+
 extension ImageListPresenter : WebServiceDelegate {
     func serviceFinished(withResponse response: ResponseModelProtocol) {
         isLoading = false
@@ -73,6 +75,8 @@ extension ImageListPresenter : WebServiceDelegate {
         view?.update(with: error)
     }
 }
+
+// MARK: - ImageListPresenter
 
 private extension ImageListPresenter {
     func fetchImageList(with keyword: String) {

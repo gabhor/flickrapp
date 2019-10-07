@@ -18,6 +18,8 @@ class PhotosGetInfoDeserializer: ResponseDeserializerProtocol {
     }
 }
 
+// MARK: - Private extension
+
 private extension PhotosGetInfoDeserializer {
     func photoDetails(from jsonData: AnyObject) -> FlickrPhotoDetails? {
         guard let _ = jsonData as? [String: Any], let photoData = jsonData[Constant.ResponseParameter.photo]  as? [String: Any] else { return .none }

@@ -23,6 +23,8 @@ class ImageDetailsPresenter {
     }
 }
 
+// MARK: - WebServiceDelegate
+
 extension ImageDetailsPresenter : WebServiceDelegate {
     func serviceFinished(withResponse response: ResponseModelProtocol) {
         guard let response = response as? PhotosGetInfo.ResponseModel else { return }

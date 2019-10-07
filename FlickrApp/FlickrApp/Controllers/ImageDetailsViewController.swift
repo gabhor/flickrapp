@@ -30,6 +30,8 @@ class ImageDetailsViewController: UIViewController {
     }
 }
 
+// MARK: - ImageDetailsViewProtocol
+
 extension ImageDetailsViewController: ImageDetailsViewProtocol {
     func update(with photo: FlickrPhotoDetails) {
         photoDetails = photo
@@ -44,12 +46,16 @@ extension ImageDetailsViewController: ImageDetailsViewProtocol {
     }
 }
 
+// MARK: - UIScrollViewDelegate
+
 extension ImageDetailsViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 
         return imageView
     }
 }
+
+// MARK: - Private extension
 
 private extension ImageDetailsViewController {
 

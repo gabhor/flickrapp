@@ -16,52 +16,23 @@ class WebService {
         LogService.shared.debug("requestUrl: \(requestUrl)")
         let urlRequest = postUrlRequest(requestUrl: requestUrl, postDataString: requestModel.queryDataString())
         let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data: Data?, response: URLResponse?, error: Error?) in
-
             guard let strongSelf = self else { return }
 
             if let response = response {
                 LogService.shared.trace("response: \(response)")
             }
-
             if let error = error {
-                LogService.shared.error("error: \(error)")
-
                 strongSelf.handleError(error: error as NSError)
                 return
             }
-
-            guard let data = data else {
-                let error = NSError(domain: Constant.Error.appErrorDomaion, code: (response as? HTTPURLResponse)?.statusCode ?? Constant.Error.generalError, userInfo: .none)
-                strongSelf.handleError(error: error)
-                return
-            }
-
-            guard let httpUrlResponse = response as? HTTPURLResponse, httpUrlResponse.statusCode == 200 else {
-                let error = NSError(domain: Constant.Error.appErrorDomaion, code: (response as? HTTPURLResponse)?.statusCode ?? Constant.Error.generalError, userInfo: .none)
-                strongSelf.handleError(error: error)
-                return
-            }
-
-            do {
-                LogService.shared.debug("string response: \(String(data: data, encoding: .utf8) ?? "-")")
-
-                let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-                LogService.shared.info("json response: \(jsonData)")
-                let responseModel = deserializer.responseModel(fromJsonData: jsonData)
-                if responseModel.stat == Constant.FlickrService.Result.successful {
-                    strongSelf.delegate?.serviceFinished(withResponse: responseModel)
-                } else {
-                    // Process error
-                }
-            } catch _ as NSError {
-                let error = NSError(domain: Constant.Error.appErrorDomaion, code: (response as? HTTPURLResponse)?.statusCode ?? Constant.Error.jsonParseError, userInfo: .none)
-                strongSelf.handleError(error: error)
-            }
+            strongSelf.processHttpResponse(data: data, response: response, deserializer: deserializer)
         }
 
         task.resume()
     }
 }
+
+// MARK: - Private extension
 
 private extension WebService {
 
@@ -73,7 +44,43 @@ private extension WebService {
         return urlRequest
     }
 
+    func processHttpResponse(data: Data?, response: URLResponse?, deserializer: ResponseDeserializerProtocol) {
+        guard let data = data else {
+            let error = NSError(domain: Constant.Error.appErrorDomaion, code: (response as? HTTPURLResponse)?.statusCode ?? Constant.Error.generalError, userInfo: .none)
+            handleError(error: error)
+            return
+        }
+
+        guard let httpUrlResponse = response as? HTTPURLResponse, httpUrlResponse.statusCode == 200 else {
+            let error = NSError(domain: Constant.Error.appErrorDomaion, code: (response as? HTTPURLResponse)?.statusCode ?? Constant.Error.generalError, userInfo: .none)
+            handleError(error: error)
+            return
+        }
+
+        processJsonData(data: data, deserializer: deserializer)
+    }
+
+    func processJsonData(data: Data, deserializer: ResponseDeserializerProtocol) {
+        do {
+            LogService.shared.debug("string response: \(String(data: data, encoding: .utf8) ?? "-")")
+
+            let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+            LogService.shared.info("json response: \(jsonData)")
+            let responseModel = deserializer.responseModel(fromJsonData: jsonData)
+            if responseModel.stat == Constant.FlickrService.Result.successful {
+                delegate?.serviceFinished(withResponse: responseModel)
+            } else {
+                // Process error
+            }
+        } catch _ as NSError {
+            let error = NSError(domain: Constant.Error.appErrorDomaion, code: Constant.Error.jsonParseError, userInfo: .none)
+            handleError(error: error)
+        }
+
+    }
+
     func handleError(error: NSError) {
+        LogService.shared.error("error: \(error)")
 
         if error.code == Constant.Error.communicationError {
             // Process error

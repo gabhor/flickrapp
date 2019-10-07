@@ -19,6 +19,8 @@ class PhotosSearchDeserializer: ResponseDeserializerProtocol {
     }
 }
 
+// MARK: - Private extension
+
 private extension PhotosSearchDeserializer {
     func photos(from photosNode: Any?) -> [FlickrPhoto]? {
         guard let photosNode = photosNode as? [String: Any], let photoNode = photosNode[Constant.ResponseParameter.photo] as? [[String: Any]] else { return .none }

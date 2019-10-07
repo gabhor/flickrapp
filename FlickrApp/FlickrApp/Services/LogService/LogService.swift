@@ -38,6 +38,8 @@ class LogService {
 
 }
 
+// MARK: - Private extension
+
 private extension LogService {
     func log(string: String, requiredLogLevel: LogLevel) {
         if Constant.App.logLevel.rawValue >= requiredLogLevel.rawValue {

@@ -49,6 +49,8 @@ class UrlImageView: UIView {
 
 }
 
+// MARK: - Private extension
+
 private extension UrlImageView {
     func initCustomView() {
         Bundle.main.loadNibNamed("UrlImageView", owner: self, options: nil)

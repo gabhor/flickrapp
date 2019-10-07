@@ -31,7 +31,16 @@ class ImageListViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
-    // MARK: - Segues
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil, completion: {
+            [weak self] _ in
+            guard let strongSelf = self else { return }
+            DispatchQueue.main.async {
+                strongSelf.updateThumbnails()
+            }
+        })
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constant.App.showDetailSegue {
@@ -43,17 +52,6 @@ class ImageListViewController: UIViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
-    }
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: nil, completion: {
-            [weak self] _ in
-            guard let strongSelf = self else { return }
-            DispatchQueue.main.async {
-                strongSelf.updateThumbnails()
-            }
-        })
     }
 }
 
@@ -118,7 +116,7 @@ extension ImageListViewController : ImageListViewProtocol {
     }
 }
 
-// MARK: - Privíte extension
+// MARK: - Private extension
 
 private extension ImageListViewController {
     func initUserInterface() {
