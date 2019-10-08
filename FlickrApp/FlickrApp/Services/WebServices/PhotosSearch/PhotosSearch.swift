@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//TODO TEST
+
 struct PhotosSearch {
     struct RequestModel: RequestModelProtocol {
         var text: String?

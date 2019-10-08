@@ -12,9 +12,8 @@ class AppDataService {
 
     static let shared = AppDataService()
 
-    //TODO TEST
     func getStoredSearchKeyword() -> String {
-        if let keyword = UserDefaults.standard.object(forKey: Constant.App.storedKeywordKey) as? String {
+        if let keyword = UserDefaults.standard.object(forKey: Constant.App.storedKeywordKey) as? String, keyword.count > 0 {
             return keyword
         }
         return Constant.App.initialSearchText
