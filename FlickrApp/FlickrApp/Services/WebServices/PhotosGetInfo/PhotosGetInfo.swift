@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//TODO TEST
+
 struct PhotosGetInfo {
     struct RequestModel: RequestModelProtocol {
         var photoId: String

@@ -144,6 +144,9 @@ private extension ImageListViewController {
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         collectionView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         searchBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                                                    NSAttributedString.Key.font: UIFont.homeScreenHeaderFont]
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
