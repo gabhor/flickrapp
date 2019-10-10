@@ -15,6 +15,7 @@ class PhotosSearchDeserializer: ResponseDeserializerProtocol {
         }
 
         let photosNode = jsonDict[Constant.ResponseParameter.photos]
+        
         return PhotosSearch.ResponseModel(stat: stat, message: jsonData[Constant.ResponseParameter.message] as? String, code: jsonData[Constant.ResponseParameter.code] as? Int, photos: photos(from: photosNode))
     }
 }

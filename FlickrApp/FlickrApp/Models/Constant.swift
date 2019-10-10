@@ -9,9 +9,7 @@
 import Foundation
 
 public enum Constant {
-
     public enum App {
-
         public static let appName = "FlickrApp"
         public static let photoCellIdentifier = "PhotoCell"
         public static let showDetailSegue = "showDetail"
@@ -24,9 +22,8 @@ public enum Constant {
             public static let logLevel = LogLevel.error
         #endif
     }
-    public enum FlickrService {
 
-        // service data
+    public enum FlickrService {
         public static let restServiceUrl = "https://www.flickr.com/services/rest/"
         public static let defaultTimeoutInterval = 30
         public static let apiKey = "65803e8f6e4a3982200621cad356be51"
@@ -35,21 +32,17 @@ public enum Constant {
         public static let noJsonCallback = "1"
 
         public enum Method {
-
             public static let photosSearch = "flickr.photos.search"
             public static let photosGetInfo = "flickr.photos.getInfo"
         }
 
-
         public enum Result {
-
             public static let successful = "ok"
             public static let failed = "fail"
         }
     }
 
     public enum RequestParameter {
-
         public static let apiKey = "api_key"
         public static let format = "format"
         public static let noJsonCallback = "nojsoncallback"
@@ -63,7 +56,6 @@ public enum Constant {
     }
 
     public enum ResponseParameter {
-
         public static let stat = "stat"
         public static let message = "message"
         public static let code = "code"
@@ -86,16 +78,12 @@ public enum Constant {
     }
 
     public enum WebService {
-
         public static let defaultTimeoutInterval = 30.0
         public static let method = "POST"
-
     }
 
     public enum Error {
-
         public enum Domain {
-
             public static let app = "AppErrorDomain"
             public static let communication = "CommunicationErrorDomain"
             public static let photosSearchService = "PhotosSearchServiceErrorDomain"
@@ -103,7 +91,6 @@ public enum Constant {
         }
 
         public enum Code {
-
             public static let communicationError = -1009
             public static let generalError = -1
             public static let jsonParseError = -2
@@ -117,20 +104,17 @@ public enum Constant {
 
 
     public enum PhotoUrl {
+        public static let thumbnail = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_m.jpg"
+        public static let large = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_b.jpg"
+        public static let original = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[ORIGINALSECRET]_o.[ORIGINALFORMAT])"
 
-            public static let thumbnail = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_m.jpg"
-            public static let large = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[SECRET]_b.jpg"
-            public static let original = "https://farm[FARM].staticflickr.com/[SERVER]/[ID]_[ORIGINALSECRET]_o.[ORIGINALFORMAT])"
-
-            public enum Parameter {
-
-                public static let farm = "[FARM]"
-                public static let server = "[SERVER]"
-                public static let photoId = "[ID]"
-                public static let secret = "[SECRET]"
-                public static let originalSecret = "[ORIGINALSECRET]"
-                public static let originalFormat = "[ORIGINALFORMAT]"
-            }
+        public enum Parameter {
+            public static let farm = "[FARM]"
+            public static let server = "[SERVER]"
+            public static let photoId = "[ID]"
+            public static let secret = "[SECRET]"
+            public static let originalSecret = "[ORIGINALSECRET]"
+            public static let originalFormat = "[ORIGINALFORMAT]"
+        }
     }
-
 }

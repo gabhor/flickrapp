@@ -10,5 +10,4 @@ import Foundation
 
 protocol ResponseDeserializerProtocol {
     func responseModel(fromJsonData jsonData: AnyObject) -> ResponseModelProtocol
-
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 extension Error {
-    
     func message() -> String {
         let errorDomain = (self as NSError).domain
         let errorCode = (self as NSError).code
         var errorString = "unknownError".localized
+        
         if errorDomain == Constant.Error.Domain.communication {
             errorString = "communicationError".localized
         } else if errorDomain == Constant.Error.Domain.app {
@@ -23,9 +23,7 @@ extension Error {
         } else if errorDomain == Constant.Error.Domain.photosGetInfoService {
             errorString = getInfoErrorString(for: errorCode)
         }
-//        if let message = (self as NSError).userInfo[Constant.Error.serviceMessageKey] as? String {
-//            return message
-//        }
+
         return "\(errorString)\n(\(errorCode))"
     }
 

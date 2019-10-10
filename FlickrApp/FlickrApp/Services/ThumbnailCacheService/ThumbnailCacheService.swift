@@ -9,9 +9,7 @@
 import Foundation
 
 class ThumbnailCacheService {
-
     static let shared = ThumbnailCacheService()
-
     private var inMemoryCache = [String: Data]()
 
     func cache(imageData: Data, url: String) {

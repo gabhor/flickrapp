@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIFont {
-
     static var homeScreenHeaderFont: UIFont {
         return UIFont(name: "Amperzand", size: 28.0) ?? UIFont.systemFont(ofSize: 28.0)
     }

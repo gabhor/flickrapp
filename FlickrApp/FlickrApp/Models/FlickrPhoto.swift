@@ -9,7 +9,6 @@
 import Foundation
 
 struct FlickrPhoto {
-    
     let photoId: String?
     let owner: String?
     let secret: String?
@@ -18,7 +17,6 @@ struct FlickrPhoto {
     let title: String?
 
     static func fromJsonData(_ jsonData: [String: Any]) -> FlickrPhoto {
-        
         return FlickrPhoto(photoId: jsonData[Constant.ResponseParameter.photoId] as? String,
                            owner: jsonData[Constant.ResponseParameter.owner] as? String,
                            secret: jsonData[Constant.ResponseParameter.secret] as? String,
@@ -35,6 +33,7 @@ struct FlickrPhoto {
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.secret, with: secret)
+        
         return urlString
     }
 }

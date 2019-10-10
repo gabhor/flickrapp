@@ -9,10 +9,8 @@
 import UIKit
 
 class ImageListViewController: UIViewController {
-
     var detailViewController: ImageDetailsViewController? = nil
     private var presenter = ImageListPresenter()
-
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var noPhotoLabel: UILabel!
@@ -150,7 +148,6 @@ private extension ImageListViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                                                    NSAttributedString.Key.font: UIFont.homeScreenHeaderFont]
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-
     }
 
     func initSplitView() {
@@ -166,6 +163,7 @@ private extension ImageListViewController {
 
     func startSearch() {
         guard let keyword = searchBar.text else { return }
+        
         presenter.startSearch(with: keyword)
     }
 

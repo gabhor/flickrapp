@@ -44,11 +44,14 @@ struct PhotosGetInfo {
         var error: NSError? {
             if let code = code {
                 var userInfo = [String: String]()
+                
                 if let message = message {
                     userInfo[Constant.Error.serviceMessageKey] = message
                 }
+
                 return NSError(domain: Constant.Error.Domain.photosGetInfoService, code: code, userInfo: userInfo)
             }
+            
             return .none
         }
     }

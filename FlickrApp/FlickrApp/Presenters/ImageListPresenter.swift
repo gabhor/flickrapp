@@ -62,6 +62,7 @@ extension ImageListPresenter : WebServiceDelegate {
     func serviceFinished(withResponse response: ResponseModelProtocol) {
         isLoading = false
         guard let response = response as? PhotosSearch.ResponseModel else { return }
+
         if let photoList = response.photos, photoList.count > 0 {
             photos.append(contentsOf: photoList)
         } else {
@@ -76,11 +77,12 @@ extension ImageListPresenter : WebServiceDelegate {
     }
 }
 
-// MARK: - ImageListPresenter
+// MARK: - Private extension
 
 private extension ImageListPresenter {
     func fetchImageList(with keyword: String) {
         guard keyword.count > 0 else { return }
+
         isLoading = true
         let page = Int(ceil(Double(photos.count)/Double(Constant.App.perPageDefaultValue)))
         let requestModel = PhotosSearch.RequestModel(text: keyword, page: page+1)
@@ -91,5 +93,4 @@ private extension ImageListPresenter {
         isLoading = loading
         view?.isLoading(loading)
     }
-
 }
