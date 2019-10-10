@@ -9,7 +9,6 @@
 import UIKit
 
 class ImageDetailsViewController: UIViewController {
-
     private var presenter = ImageDetailsPresenter()
     var detailItem: FlickrPhoto?
     var photoDetails: FlickrPhotoDetails?
@@ -38,7 +37,6 @@ extension ImageDetailsViewController: ImageDetailsViewProtocol {
         DispatchQueue.main.async {
             self.updateUI()
         }
-
     }
 
     func update(with error: Error) {
@@ -52,7 +50,6 @@ extension ImageDetailsViewController: ImageDetailsViewProtocol {
 
 extension ImageDetailsViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-
         return imageView
     }
 }
@@ -60,7 +57,6 @@ extension ImageDetailsViewController: UIScrollViewDelegate {
 // MARK: - Private extension
 
 private extension ImageDetailsViewController {
-
     func initUserInterface() {
         title = ""
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -123,7 +119,6 @@ private extension ImageDetailsViewController {
     func updateDescription() {
         if let photoDetails = photoDetails {
             let attributedDescription = NSMutableAttributedString()
-
             let titleParagraphStyle = NSMutableParagraphStyle()
             titleParagraphStyle.paragraphSpacing = 15
             titleParagraphStyle.alignment = .center
@@ -134,19 +129,15 @@ private extension ImageDetailsViewController {
             if let title = photoDetails.title {
                 attributedDescription.append(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.lightFont, NSAttributedString.Key.paragraphStyle: titleParagraphStyle]))
             }
-
             if let userName = photoDetails.ownerUserName {
                 attributedDescription.append(NSAttributedString(string: "\n\(userName)", attributes: [NSAttributedString.Key.font: UIFont.extraLightFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
             }
-
             if let realName = photoDetails.ownerRealName, realName.count > 0 {
                 attributedDescription.append(NSAttributedString(string: " (\(realName))", attributes: [NSAttributedString.Key.font: UIFont.extraLightFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
             }
-
             if let date = photoDetails.taken {
                 attributedDescription.append(NSAttributedString(string: "\n\(date)", attributes: [NSAttributedString.Key.font: UIFont.smallExtraLightFont, NSAttributedString.Key.paragraphStyle: userParagraphStyle]))
             }
-
             self.detailsLabel.attributedText = attributedDescription
         } else {
             self.detailsLabel.text = ""

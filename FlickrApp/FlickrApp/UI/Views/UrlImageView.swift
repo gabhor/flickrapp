@@ -46,7 +46,6 @@ class UrlImageView: UIView {
 
         loadImage()
     }
-
 }
 
 // MARK: - Private extension
@@ -57,7 +56,6 @@ private extension UrlImageView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-
         activityIndicatorBackgroundView.layer.cornerRadius = 5
         activityIndicatorBackgroundView.clipsToBounds = true
     }

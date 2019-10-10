@@ -13,6 +13,7 @@ class WebService {
 
     func processRequest(requestModel: RequestModelProtocol, deserializer: ResponseDeserializerProtocol) {
         guard let requestUrl = URL(string: Constant.FlickrService.restServiceUrl) else { return }
+
         LogService.shared.debug("requestUrl: \(requestUrl)")
         let urlRequest = postUrlRequest(requestUrl: requestUrl, postDataString: requestModel.queryDataString())
         let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data: Data?, response: URLResponse?, error: Error?) in
@@ -27,7 +28,6 @@ class WebService {
             }
             strongSelf.processHttpResponse(data: data, response: response, deserializer: deserializer)
         }
-
         task.resume()
     }
 }
@@ -35,9 +35,10 @@ class WebService {
 // MARK: - Private extension
 
 private extension WebService {
-
+    
     func postUrlRequest(requestUrl: URL, postDataString: String) -> URLRequest {
         var urlRequest = URLRequest(url: requestUrl, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: Constant.WebService.defaultTimeoutInterval)
+
         urlRequest.httpMethod = Constant.WebService.method
         urlRequest.httpBody = postDataString.data(using: .utf8)
 
@@ -63,7 +64,6 @@ private extension WebService {
     func processJsonData(data: Data, deserializer: ResponseDeserializerProtocol) {
         do {
             LogService.shared.debug("string response: \(String(data: data, encoding: .utf8) ?? "-")")
-
             let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
             LogService.shared.info("json response: \(jsonData)")
             let responseModel = deserializer.responseModel(fromJsonData: jsonData)

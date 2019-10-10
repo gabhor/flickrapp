@@ -9,7 +9,6 @@
 import Foundation
 
 class LogService {
-
     static let shared = LogService()
 
     func fatal(_ string: String) {
@@ -35,7 +34,6 @@ class LogService {
     func trace(_ string: String) {
         log(string: string, requiredLogLevel: .trace)
     }
-
 }
 
 // MARK: - Private extension

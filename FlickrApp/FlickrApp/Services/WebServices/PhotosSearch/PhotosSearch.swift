@@ -29,21 +29,17 @@ struct PhotosSearch {
             if let text = text {
                 queryData[Constant.RequestParameter.text] = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             }
-
             if let perPage = perPage {
                 queryData[Constant.RequestParameter.perPage] = "\(perPage)"
             } else {
                 queryData[Constant.RequestParameter.perPage] = "\(Constant.App.perPageDefaultValue)"
             }
-
             if let page = page {
                 queryData[Constant.RequestParameter.page] = "\(page)"
             }
 
             return queryData
         }
-
-
     }
 
     struct ResponseModel: ResponseModelProtocol {
@@ -54,11 +50,14 @@ struct PhotosSearch {
         var error: NSError? {
             if let code = code {
                 var userInfo = [String: String]()
+
                 if let message = message {
                     userInfo[Constant.Error.serviceMessageKey] = message
                 }
+
                 return NSError(domain: Constant.Error.Domain.photosSearchService, code: code, userInfo: userInfo)
             }
+            
             return .none
         }
     }

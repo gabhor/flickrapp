@@ -9,7 +9,6 @@
 import Foundation
 
 struct FlickrPhotoDetails {
-
     let photoId: String?
     let secret: String?
     let server: String?
@@ -50,6 +49,7 @@ struct FlickrPhotoDetails {
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.originalSecret, with: originalSecret)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.originalFormat, with: originalFormat)
+
         return urlString
     }
 
@@ -61,6 +61,7 @@ struct FlickrPhotoDetails {
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.server, with: server)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.photoId, with: photoId)
         urlString = urlString.replacingOccurrences(of: Constant.PhotoUrl.Parameter.secret, with: secret)
+
         return urlString
     }
 }

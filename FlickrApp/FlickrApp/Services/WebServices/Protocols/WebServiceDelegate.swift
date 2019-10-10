@@ -9,7 +9,6 @@
 import Foundation
 
 protocol WebServiceDelegate: class {
-
     func serviceFinished(withResponse response: ResponseModelProtocol)
     func serviceFinished(withError error: Error)
 }

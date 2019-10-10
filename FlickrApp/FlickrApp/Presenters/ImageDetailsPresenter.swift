@@ -10,7 +10,6 @@ import Foundation
 
 class ImageDetailsPresenter {
     weak var view: ImageDetailsViewProtocol?
-
     let photoInfoService = PhotosGetInfoService()
 
     init() {
